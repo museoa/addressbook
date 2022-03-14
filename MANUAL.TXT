@@ -1,0 +1,506 @@
+         [1]Index | [2]Install | [3]Manual | [4]Screenshot | [5]Changes
+
+                              Addressbook - Manual
+
+                      © 1995, 1996, 1997 [6]Clemens Durka
+
+   Addressbook is a program to manage your addresses, phone numbers, e-mail
+   addresses and everything which is now written in your rolodex. Addressbook
+   is copyrighted by [7]Clemens Durka, but available under the GNU GPL.
+
+   This manual is under developpement. To get an up to date version, look at:
+
+   [8]http://home.pages.de/~addressbook/
+
+   ══════════════════════════════════════════════════════════════════════════
+
+Contents of this Manual:
+
+     • [9]Invoking Addressbook
+     • [10]First Steps
+     • [11]Menubar
+     • [12]Phone, Fax etc. Buttons
+     • [13]Creating a new database
+     • [14]Dataformat
+     • [15]Configfile
+     • [16]Dataformatfile
+     • [17]Little commandlineprogramms
+     • [18]Printing
+     • [19]Anything else?
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  1. INVOKING ADDRESSBOOK
+
+   To invoke addressbook, simply type addressbook. Then it will read the
+   global configfile (normally /usr/local/lib/addressbook/addressbook.config)
+   and, if you have, your private configfile (normally ~/.addressbook.config)
+   to override some defaults.
+
+   There are the following command line options:
+
+ -a  or -addrfile         path and filename of the addressfile to load
+ -c  or -configfile       path and filename of the configfile to load
+ -lg or -language         language (english, german, french, dutch, italian)
+ -ld or -libdir           path or the library directory
+ -hlp                     show some help
+ -l  or -lock             try to lock addressfile
+ -ro                      open addressfile readonly and don't lock
+ -db or -debug X          set debuglevel to X
+ -iconic                  start as icon
+
+
+   And the following environment variables:
+
+ ADDRBOOK_LIBDIR          libdir         (same as -ld)
+ ADDRBOOK_ADDRFILE        addressfile    (same as -a)
+ ADDRBOOK_CONFIG          configfile     (same as -c)
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  2. THE FIRST STEPS
+
+   Once invoced, you should get a nice window with a menubar on the top, some
+   entryfields left, a listbox with all the names in it right, and some
+   buttons on the right and the bottom.
+
+   Display address: Whenever you press the mouse button on a name in the
+   listbox, you get the detailed address in the entryfield.
+
+   Moving in the database: By pressing the buttons with the triangles you can
+   move in the listbox. By pressing one of the buttons (A-Z) you jump
+   directly to the corresponding letter. By typing some letters in the field
+   beside the goto button, you jump to the name beginning with these letters.
+
+   Searching: Press the leftmost button (Clear) to clear the entry field.
+   Then fill in the fields, you want to search for. Then press the 'Search'
+   button. The corresponding names will appear in the listbox. If you press
+   the rightmost button (View) can toggle to see all names again.
+   Example (with the exampledatabase): Press 'Clear', put the letter 'D' in
+   the country field, press 'Search'. Now you will see all Germans.
+
+   Delete a record: The button 'Delete Record' removes the record actually
+   displayed.
+
+   Add a record: Press 'Clear' to clear the entryfield. Complete the fields
+   in the left part. Press 'Add record' to add the record. For the contents
+   of the form, you should type in the data, please see the dataformat
+   section in this manual. If you add several records which are similar in
+   some fields, you can omit pressing 'Clear' and just change the fields,
+   which are different before pressing 'Add record'. Attention: The record is
+   only added in the database in the working application. You have to save
+   changes to disk, before leaving the program.
+
+   Change an existing record: Select the record you want to change, so that
+   it is in the left field. Edit the fields you want to change. Press 'Change
+   Record' and confirm. Changes get written to the file on the next saving.
+
+   Saving changes to disk: Invoke File -> Save, if you want to save it with
+   the same name, File -> Save as, if you want to change the name. If you
+   call Save as, the dataformatfile gets copied automatically.
+
+   Undo: The undo undoes the last add, delete and change operation.
+
+   Loading another database: Invoke File -> Load and select the other
+   database
+
+   To exit the program: Invoke File -> Exit or press Ctrl+X. Dont forget to
+   save before leaving, if you made some changes.
+
+   To switch fast between two databases: Define adrfile1 and adrfile2 in your
+   configfile, then you can switch fast between them.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  3. THE MENUBAR
+
+   The File Menu:
+   Load, Save, Save as, Close and Exit does what it should do :-)
+   Print invokes printing, see unter printing.
+   Import and is not implemented yet, sorry.
+   If you defined adrfile1 and adrfile2 in your configfile, the names for
+   these databases will appear below in the file menu. If you define
+   adrfile1alias and adrfile2alias, those names will be displayed on the
+   bottom of the filemenu instead of the filename. (Ex. adrfile2
+   ~/.addresses.dat ; adrfile2alias "Privat Addresses")
+
+   The Edit Menu:
+   The same, than you can do with the buttons.
+
+   The Goto Menu:
+   The same, than you can do with the buttons.
+
+   The Option Menu:
+
+   Search options:
+
+   exact search:
+   the fields searched for must match exactly.
+
+   wildcard search:
+   search with wildcards like in the shell ('*','?','[]') (like: '*Main
+   Street' 'Hauptstr.*' '[A-C]*')
+
+   regexp search:
+   Searches for regular Expressions
+   Result to stdout: Switches the action for the buttons down right. Either
+   they invoke a program or they write the corresponding data to stdout.
+   Special characters: Defines what happens with non-ASCII characters. Either
+   leave them and use ISO (recommended) or convert to TeX
+   Change Preferences: Change Preferences: If you are to lasy to change the
+   configfile by hand (see CONFIGFILE), you can change some things here.
+
+   Countries:
+   Here you can see all the country codes as you should use them.
+
+   Help:
+   Some help
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  4. THE PHONE, FAX, MAIL AND EMAIL BUTTONS
+
+   These buttons situated on the bottom right either put the contents of the
+   corresponding field to stdout or they give them as argument to a program.
+   Change the behavior with Options -> Result to stdout. The programs called
+   are defined in the configfile, normally you can put there a program to
+   dial, to compose a fax and send it, to write an e-mail and send it or to
+   write an envelope with the printer. If you have a good program, which
+   works, please write to the author.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  5. CREATE A NEW DATABASE
+
+   Each database has a datafile and a formatfile. Normally the datafile ends
+   with '.dat' and the formatfile with '.dat.fmt'. You have to create a
+   dataformatfile and an empty datafile to begin a new database. So the
+   easiest way to begin with a new database is to copy one of the sample
+   dataformatfiles there where you want to have your addressfile. Or load an
+   existing addressfile and use 'Save as' to save it to the new name (then
+   the formatfile gets copied automatically). Then you can edit the
+   formatfile.
+
+   Ex.: You want to create a personal database in ~/adr which will have the
+   name addresses.dat
+
+   Create the directory:
+
+ mkdir ~/adr
+
+   Copy the sampledatafile to as addresses.dat.fmt to it:
+
+ cp /usr/local/lib/addressbook/sample/addresses_private.dat.fmt \
+     ~/adr/addresses.dat.fmt
+
+   Modify the datafile to your needs (read the section DATAFORMATFILE)
+
+ vi ~/adr/addresses.dat.fmt
+
+   Create an empty datafile:
+
+ touch ~/adr/adresses.dat
+
+   Then invoke 'addressbook -a ~/adr/addresses.dat and you have your new
+   empty database. Don't forget to save before quitting.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  6. DATAFORMAT
+
+   The Format, data is stored is quite simple:
+
+   one file (usually with extension .dat) holds all the data, one line per
+   entry, fields separated by a special character (usually ';')
+
+   a second file (extension .dat.fmt) holds the format definitions, that
+   means, which field contains which data, which fields get shown in the
+   listbox and which format.
+
+   The program fully supports 8 bit iso-latin fonts, so enter any special
+   character just like this. (german umlauts, french accents). If these
+   special characters are on your keyboard, but don't work, you maybe need to
+   modify Xmodmap.
+
+   Format for some fields:
+
+ addon           something like c/o which doesn't belong to street
+
+ street          just as usual in the country: first streetname and number or
+                 first number, then streetname (like in France)
+
+ country         Please use country abbrevations as on international number
+                 plates. By clicking on the Button Countries you get a list.
+                 Full names will be expanded automatically.
+
+ zip             Zip Code, including state (for USA) or letters (for NL)
+
+ city            City name without zipcode
+
+ birthday        feel free, but consequent. I use dd.mm.yyyy
+                 maybe sometime a 'birthday reminder app' will be added
+
+ phone*          IMPORTANT: put it, as if you were already in the country
+                 international dial prefixes are added automatically, if
+                 your configuration in addressbook.config is correct.
+                 p.ex.:
+                 1-234-567-7890 (USA & Canada)
+                 (089)1234567   (Germany and many others)
+                 12345678       (Danmark and France exept Paris)
+                 (1)44556677    (France around Paris)
+
+ email           full email address
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  7. CONFIGFILE
+
+   You can change much of the behavior of the program in the configfile. Most
+   of the options have resonable defaults, so you don't need them. All of
+   these can be overwritten with the global and personal configfile. First
+   the global one is loaded and then it is overwritten by your personal one.
+   You can look in libdir/addressbook.config.sample for some ideas.
+
+   The following options should be set by the installation, but you can
+   change them:
+
+ libdir          path to the librarydirectory (the only really important thing)
+ adrfile         the default addressfile
+ language        the default language (english, german, french)
+ mycountry       the countrycode of your country (p.ex. USA or CDN or D)
+ myareacode      your telephone area code (for correct omission for local calls)
+                 including the 1 for USA (like 1212 for New York,
+                 089 for M�nchen, 1 for Paris)
+
+   These options you have to change manually, if you need:
+
+ dialoutlocal    Your dialoutprefix for local calls inside your telephone
+                 installation. If you have a standalone phone, it sould be empty
+ dialoutdistance Your dialoutprefix for long distance calls inside your
+                 tel. installation
+ callprog,phone  Program which is called to dial a phone number
+                 (use %number for number)
+ callprog,fax    Proger for emailaddress)
+ only_stdout     Actionbuttons only put to stdout (instead of calling
+                 upper programs)
+ searchtype      The default searchtype (exact, match, regexp)
+ select_mask     The selection mask for filenames (endings of datafiles)
+ texconvert      Conversion to TeX
+
+ confirm         Confirm each add and change operation (default no)
+ confirmdelete   Confirm delete operation (default yes)
+
+ makebackup      Always create a backupcopy when saving (default yes)
+ removetmp       Remove temporary files (default yes)
+ lockbydefault   Try to lock file and so that the first person gets
+                 write access and all other persons at the same time
+                 only read access.
+ nolocking       Don't do file locking (for security reasons, this can
+                 only be specified in the global configfile, not in the
+                 personal one.)
+ color           The color used: old for yellow, new for grey or anything
+                 that is accepted by tk_palette (default old)
+ defaultfont     some fonts
+ entryfont
+ titlefont
+ fixedfont
+ showabcbuttons  Show ABC Buttons (default yes)
+ showactionbuttons       Show Action Buttons (default yes)
+
+ userhead        Userdefined LaTeX heading (default \\documentclass{article}
+                 \\begin{document} \\begin{tabular})
+ usertail        Uderdefined LaTeX end (default \\end{tabular} \\end{document})
+ userincludecolumns  set to yes, if you specify the number of colums of the
+                 LaTeX table. (default no, then '{lllll...}' is added correctly)
+ usercalllatex   LaTeX is called from the programm (default yes)
+
+
+   Printing related options (some thing might not work, as printing is in
+   development). In parentheses possible settings, default is the first one.
+
+ printform       Default form and fields to print (address, name,
+                 nametel, addresstel, almostever, everything)
+ printopt        Default print output (latex, text, ascii, ps)
+ printtype       Print as (line, box)
+ printarea       Area to print (all, selection, region)
+ printfile       File in which to print (use '| lpr' to send to printer)
+ print,name      The fields to print when printform is name.
+ print,nametel   same (as well for address, addresstel, almostever, everything
+                 Entries which belog together are in curly braces {}
+ zipformat,eu    Format for the order of zip and city (Europe = state zip city)
+ zipformat,uk    Format for the order of zip and city (UK   = city state zip)
+ zipformat,us    Format for the order of zip and city (USA  = city, state zip;
+                 which is written as ", city state zip"
+
+   These options normally should not needed to be changed, they have
+   hardcoded defaults, so you neednot mention them in your configfile:
+
+ entrywidth      width of the entryfields
+ listboxwidth    width of the listbox
+ listboxheight   height of the listbox
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  8. DATAFORMATFILE
+
+   The dataformatfile defines the semantic of the datafile. Each field of the
+   database has to be identified by a contents type. There are many
+   predefined types, but you can define yourself some new ones. This is
+   needed, so that the program can identify special fields, like the country
+   or the phonenumber and for selection to print.
+
+   In the dataformatfile, you have to write in each line the number of the
+   field (beginning with 0) and the type.
+
+   For example:
+
+ 0 firstname
+ 1 lastname
+ 2 phonepriv
+ 3 phonework
+ 4 other1
+
+   If you define your own type (other1 - other9) you have to supply a label
+   (label1 - label9 for it)
+
+ label1 "Special purpose field"
+
+   Some other things in the dataformatfile:
+
+ separatorchar   (you should use ';' unless you have important reasons)
+ listboxformat   ("%s %s" or "%s, %s", depending if you want a comma between
+                 the fields. (like Firstname Lastname or Lastname, Firstname)
+ listboxentry1   The 1st field in the listbox
+ listboxentry2   The 2nd field in the listbox
+ sort1           The 1st field the listbox is sorted
+ sort2           The 2nd field for sorting
+
+
+   Note: Sorting is not done while loading, only when loading or changing a
+   record.
+
+   Following types for fields are possibe:
+
+ Field-ID              german transl.          french transl.
+
+ mrmrs                 Anrede                  M/Mme/Mlle
+ title                 Titel                   Titre
+ firstname             Vorname                 Prenom
+ lastname              Nachname                Nom
+ maidenname            Maedchenname            Nom de jeune fille
+ company               Firma                   Entreprise
+ institute             Einrichtung             Institut
+ department            Abteilung               Departement
+ addon                 Zusatz                  Supplement
+ pobox                 Postfach                B.P.
+ street                Strasse                 Rue
+ country               Land                    Pays
+ zip                   PLZ                     Code postal
+ city                  Ort                     Ville
+ state                 Staat                   Etat
+ province              Provinz                 Departement
+ county                Bezirk                  Arrondissement
+ birthday              Geburtstag              Date de naissance
+ phone                 Telefon                 Telephone
+ phonepriv             Telefon privat          Telephone prive
+ phonework             Telefon Arbeit          Telephone au travail
+ phonesecretary        Telefon Sekreratiat     Telephone au secretariat
+ phonemobile           Mobiltelefon            Telephone mobile
+ phonepager            Pager / Scall           Pager
+ fax                   Fax                     Telefax
+ email                 E-Mail                  E-Mail
+ www                   WWW-Homepage            Page WWW
+ category              Kategorie               Categorie
+ remark                Bemerkung               Remarque
+ knowsince             bekannt seit            connu depuis
+ lastcontact           letzter Kontakt         dernier contact
+ lastchange            letzte Aenderung        dernier changement
+ alias                 Alias                   Alias
+ id                    ID                      ID
+ nr                    Nummer                  Nombre
+ other1                zu definieren           a definer
+ other2                zu definieren           a definer
+ other3                zu definieren           a definer
+ other4                zu definieren           a definer
+ other5                zu definieren           a definer
+ other6                zu definieren           a definer
+ other7                zu definieren           a definer
+ other8                zu definieren           a definer
+ other9                zu definieren           a definer
+
+   If you define your own fields and you want to print them, you have to
+   modify print,address and similar in the optionfile. Every predefined field
+   can be used a second time if you add a '2' so you can have street and
+   street2.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  9. THE LITTLE PROGRAMMS TEL, FAX AND EMAIL
+
+   Just call these programs with the name, you want to look for as argument,
+   like 'tel Pumuckl'. If it doesn't work, maybe you have to adjust the
+   variables $CONFIGFILE inside the program.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  10. PRINTING
+
+   Printing is under development, so it works only partially. If you want to
+   send the files directly to the printer, you have to set the printfilename
+   so something like '| lpr'. If you want to modify the texfiles before
+   printing, set removetmp to NO in the configfile.
+
+   Thanks to Martin Paul <Martin.Paul@par.univie.ac.at>. He contributed a
+   standalone program for better printing. It is in the contrib directory and
+   it includes enough documentation and examples. For the moment this is
+   probably the best option to print until I find time to integrate it in the
+   program.
+
+   If you want to use the builtin printing you can modify the fields which
+   are printed in the config file. The related options are print,name
+   print,nametel print,address and so on. For example if you define
+   print,nametel {{title firstname lastname} {phone , phonepriv , phonework ,
+   fax}} You will get two lines of output, the first with the names separated
+   by space and the second with the phonenumbers separated by , In future I
+   might change these definitions to the ones used by Martin Paul.
+
+   ══════════════════════════════════════════════════════════════════════════
+
+  11. ANYTHING ELSE?
+
+   Thats all, I have written now, but any questions, comments, suggestions,
+   complaints, assistance or volunters for translation in other languages are
+   very welcome. Contact me please:
+
+   email: [20]clemens@dagobah.de, subject sould begin with "addressbook"
+   WWW: [21]http://home.pages.de/~clemens/
+
+   ══════════════════════════════════════════════════════════════════════════
+
+    [22]Clemens Durka, 02.11.1997
+
+References
+
+   Visible links
+   1. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/
+   2. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/install.html
+   3. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/manual.html
+   4. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/screenshot.html
+   5. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/changes.html
+   6. http://home.pages.de/~clemens/
+   7. http://home.pages.de/~clemens/
+   8. http://home.pages.de/~addressbook/
+   9. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#invoking
+  10. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#firststep
+  11. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#menubar
+  12. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#buttons
+  13. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#newdatabase
+  14. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#dataformat
+  15. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#configfile
+  16. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#dataformatfile
+  17. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#littleprog
+  18. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#printing
+  19. file:///mnt/sources/0-repos/world/museoa/addressbook/addressbook-0.7/MANUAL#else
+  20. mailto:clemens@dagobah.de?subject=addressbook
+  21. http://home.pages.de/~clemens/
+  22. http://home.pages.de/~clemens/
