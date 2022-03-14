@@ -1,0 +1,21 @@
+Begin3
+Title:		Addressbook
+Version:	0.7
+Entered-date:	02NOV97
+Description:	Addressbook is an addressmanager which could replace your
+		old paper rolodex. It stores addresses, phone and fax numbers
+		and can call some additional programms (like for dialing)
+		It has a nice User Interface written in Tcl/Tk
+		For more information: http://home.pages.de/~addressbook/
+Keywords:	addressbook addressmanager phonebook
+Author:		clemens@dagobah.de (Clemens Durka)
+Maintained-by:	clemens@dagobah.de (Clemens Durka)
+Primary-site:	ftp.leo.org /pub/comp/os/linux/local/apps
+		153kB addressbook-0.7.tar.gz
+Alternate-site: sunsite.unc.edu /pub/Linux/X11/xapps/rolodex
+		153kB addressbook-0.7.tar.gz
+Alternate-site: ftp.neosoft.com /tcl/code
+		153kB addressbook-0.7.tar.gz
+Platforms:	any platform that supports Tcl/Tk (tested: Linux, HPUX)
+Copying-policy: GPL
+End

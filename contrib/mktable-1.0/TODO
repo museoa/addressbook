@@ -1,0 +1,30 @@
+- Some option that allows grouping after one or more fields
+  would be nice, this would also need sorting (like "group by
+  field country, after all entries for each country print the
+  number of addresses in this group").
+
+- As of now there are some limits regarding the input file (number
+  of entries, max number of fields per entry). These should be 
+  eliminated by a more efficient memory management.
+
+- The definition of a format should be easier (i.e. not require 
+  three files). Maybe all of the definitions should be done in 
+  one file, like this:
+
+    <HEAD>
+    this is the head
+    </HEAD>
+
+    <ENTRY>
+    @0[40] - @1
+    @3
+	</ENTRY>
+
+	<FOOT>
+	</FOOT>
+
+- A graphical user interface would be really nice, but also rather
+  complicated ...
+
+- Support more input files (dbm, gdbm ?). Don't know if this is really
+  needed.

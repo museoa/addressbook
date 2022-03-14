@@ -1,0 +1,538 @@
+#!/usr/bin/tcl
+#
+set home $env(HOME)
+set possible_languages "english german french spanish dutch swedish italian finnish"
+
+set installas root
+set language english
+
+set def(mycountry,english) "USA"
+set def(mycountry,german) "D"
+set def(mycountry,french) "F"
+set def(mycountry,spanish) "E"
+set def(mycountry,dutch) "NL"
+set def(mycountry,swedish) "S"
+set def(mycountry,italian) "I"
+set def(mycountry,finnish) "SF"
+set def(myareacode,english) "1212"
+set def(myareacode,german) "089"
+set def(myareacode,french) "1"
+set def(myareacode,spanish) "91"
+set def(myareacode,dutch) "020"
+set def(myareacode,swedish) "0"
+set def(myareacode,italian) "02"
+set def(myareacode,finnish) "0"
+
+set def(installin,root) "/usr/local/bin"
+set def(installin,user) "$home/bin"
+set def(libdir,root) "/usr/local/lib/addressbook"
+set def(libdir,user) "$home/addressbook"
+set def(configfile,root) "$def(libdir,root)/addressbook.config"
+set def(configfile,user) "$def(libdir,user)/addressbook.config"
+set def(myconfigfile,root) "~/.addressbook.config"
+set def(myconfigfile,user) "~/.addressbook.config"
+set def(adrfile,root) "$def(libdir,root)/addresses.dat"
+set def(adrfile,user) "$def(libdir,user)/addresses.dat"
+set def(adrfile2,root) "~/.addresses.dat"
+set def(adrfile2,user) ""
+
+set all_languagedependant "mycountry myareacode"
+set all_rootdependant "installin libdir configfile myconfigfile adrfile adrfile2"
+set all_progs "wish mpage latex dvips perl gawk"
+set all_nodependant "address tel fax letter email"
+set all_things "$all_languagedependant $all_rootdependant $all_progs $all_nodependant"
+
+set mes(mycountry) "Country you are in"
+set mes(myareacode) "Telephone area code"
+set mes(installin) "Where should addressbook be installed"
+set mes(libdir) "Librarydirectory"
+set mes(configfile) "Global Configurationfile"
+set mes(myconfigfile) "Private Configurationfile"
+set mes(adrfile) "Default Addressfile"
+set mes(adrfile2) "Second Addressfile"
+set mes(wish) "Where is wish"
+set mes(mpage) "Where is mpage"
+set mes(latex) "Where is latex"
+set mes(dvips) "Where is dvips"
+set mes(perl) "Where is perl"
+set mes(gawk) "Where is gawk"
+set mes(address) "for all information"
+set mes(tel) "for telephone number"
+set mes(fax) "for fax number"
+set mes(letter) "for postal address"
+set mes(email) "for email address"
+
+
+set use_old 0
+
+proc main {} {
+    header
+    lookforold
+}
+
+
+proc header {} {
+    wm title . "Addressbook installation"
+    wm iconname . "Addressbook installation"
+
+    frame .h -relief raised -borderwidth 2
+    pack .h -fill both
+    label .h.l1 -text "Addressbook 0.7"
+    label .h.l2 -text "Copyright (C) 1995, 1996, 1997 Clemens Durka"
+    label .h.l3 -text "Installationprocedure"
+    pack .h.l1 .h.l2 .h.l3
+}
+
+
+proc lookforold {} {
+    if [file exists tmp/last_config] {
+	frame .k
+	pack .k
+	
+	label .k.space -text " "
+	label .k.l1 -text "I see that you have configured addressbook previously."
+	label .k.l2 -text "Do you want to use these values?"
+	pack .k.space .k.l1 .k.l2
+ 
+	frame .k.b
+	pack .k.b
+	button .k.b.1 -text "Yes, use old values" -command { destroy .k ; set use_old 1 ; load_config ; rootoruser }
+	button .k.b.2 -text "No, reset to default" -command { destroy .k ; set use_old 0 ; rootoruser }
+	button .k.b.3 -text "Cancel installation" -command {destroy . ; exit}
+	pack .k.b.1 .k.b.2 .k.b.3 -fill both
+    } else {
+	rootoruser
+    }
+}
+
+
+proc rootoruser {} {
+    global possible_languages
+
+    frame .i
+    pack .i
+
+    label .i.space -text " "
+    pack .i.space
+    message .i.m1 -aspect 1500 -text "You have two possibilities to install addressbook: as root or as user"
+    message .i.m2 -aspect 580 -text "root: will install it in a public directory like \
+	    /usr/local/bin, so that all user of the system can use it. However \
+	    everyone can have a personal configfile to override defaults. (recommended) \
+	    You have to be root now, to install as root. If not, please \
+	    exit now and restart the installation as root."
+    
+    message .i.m3 -aspect 900 -text "user: will install it in your private homedirectory. \
+	    Only recommended, if you have no root privileges and your sysadmin has \
+	    no time to install it."
+
+    pack .i.m1 .i.m2 .i.m3
+    
+    frame .i.1 -relief ridge -borderwidth 2
+    pack .i.1
+    label .i.1.l -text "Install as"
+    radiobutton .i.1.1 -text "root" -variable installas -value root
+    radiobutton .i.1.2 -text "user" -variable installas -value user
+    pack .i.1.l .i.1.1 .i.1.2 -side left
+
+    frame .i.2 -relief ridge -borderwidth 2
+    pack .i.2
+    label .i.2.l -text "Default language the program will run"
+    pack .i.2.l
+    foreach c $possible_languages {
+	radiobutton .i.2.$c -text $c -variable language -value $c
+	pack .i.2.$c -side left
+    }
+
+    frame .i.b
+    pack .i.b
+    button .i.b.1 -text "Continue" -command { destroy .i ; setvalues }
+    button .i.b.2 -text "Cancel installation" -command {destroy . ; exit}
+    pack .i.b.1 .i.b.2 -side left
+}
+
+
+proc setvalues {} {
+    global installasroot possible_languages all_things mes use_old
+
+    if !$use_old {
+	set_defaults
+    }
+
+    frame .j
+    pack .j
+
+    label .j.1 -text "Please use a countrycode like USA, CDN, D, F, GB, I, N, ZA, IL"
+    label .j.2 -text "(for correct omission for local calls)"
+    label .j.3 -text  "including 1 for USA, like 1212 for New York, 1 for Paris, 089 for München)"
+    label .j.4 -relief raised -text "For the following questions, the default answers should work."
+    label .j.5 -relief raised -text "The following programs are not absolutely needed"
+    label .j.6 -relief raised -text "Names for the comandline programms for a fast lookup without GUI"
+
+    foreach a $all_things {
+	frame .j.$a
+	pack .j.$a
+	label .j.$a.l -text $mes($a) -width 35
+	entry .j.$a.e -width 35 -relief sunken
+	pack .j.$a.l .j.$a.e -side left
+    }
+
+    pack .j.1 -after .j.mycountry
+    pack .j.2 -after .j.myareacode
+    pack .j.3 -after .j.2
+    pack .j.4 -after .j.3 -fill both
+    pack .j.5 -after .j.wish -fill both
+    pack .j.6 -after .j.gawk -fill both
+
+    frame .j.b
+    pack .j.b
+    button .j.b.1 -text "Continue" -command { get_entries ; destroy .j ; do_configure }
+    button .j.b.2 -text "Reload defaults" -command { set_defaults ; load_entries }
+    button .j.b.3 -text "Save values" -command { get_entries ; save_config }
+    button .j.b.4 -text "Cancel installation" -command {destroy . ; exit}
+    pack .j.b.1 .j.b.2 .j.b.3 .j.b.4 -side left
+
+    load_entries
+}
+
+
+proc set_defaults {} {
+    global all_progs all_languagedependant all_rootdependant all_nodependant
+    global language installas value def
+
+    foreach p $all_progs {
+	if [catch {set value($p) [exec which $p]} ] {
+	    set value($p) {}
+	}
+    }
+
+    foreach p $all_languagedependant {
+	set value($p) $def($p,$language)
+    }
+
+    foreach p $all_rootdependant {
+	set value($p) $def($p,$installas)
+    }
+
+    foreach p $all_nodependant {
+	set value($p) addr-$p
+    }
+    set value(address) address
+}
+
+proc load_entries {} {
+    global all_things value
+    
+    foreach a $all_things {
+	.j.$a.e delete 0 end
+	.j.$a.e insert 0 $value($a)
+    }
+}
+
+proc get_entries {} {
+    global all_things value
+    foreach a $all_things {
+	set value($a) [.j.$a.e get]
+    }
+}
+
+proc save_config {} {
+    global value all_things language installas
+
+    catch {exec mkdir "tmp"}
+    set f [open "tmp/last_config" w]
+    puts $f "language $language"
+    puts $f "installas $installas"
+    foreach a $all_things {
+	puts $f "value($a) $value($a)"
+    }
+    close $f
+}
+
+
+proc load_config {} {
+    global value language installas
+    
+    set f [open "tmp/last_config" r]
+    while {![eof $f]} {
+	set line [gets $f]
+	set [lindex $line 0] [lindex $line 1]
+    }
+}
+
+
+proc do_configure {} {
+    global value language
+    
+    save_config
+
+    if [catch {set f [open "tmp/addressbook" w]} result] {
+	puts "Error on writing [exec pwd]/tmp/addressbook: $result"
+	exit
+    } else {
+	puts $f "#!$value(wish) -f"
+	puts $f "#  ^^^^^^^^^^^^^^^^^^^^^^^ modify the path to find wish on your computer#"
+	puts $f "set configfile \"$value(configfile)\""
+	puts $f "set myconfigfile \"$value(myconfigfile)\""
+	
+	if [catch {set g [open "bin/addressbook" r]} result] {
+	    puts "Error on reading [exec pwd]/bin/addressbook: $result"
+	    exit
+	} else {
+	    # Ignore the first 6 lines
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    
+	    while {![eof $g]} {
+		puts $f [gets $g]
+	    }
+	    close $g
+	}
+	close $f
+	catch {exec chmod 0755 tmp/addressbook}
+    }
+    
+    
+    if [catch {set f [open "tmp/address" w]} result] {
+	puts "Error on writing [exec pwd]/tmp/address: $result"
+	exit
+    } else {
+	puts $f "#!$value(perl)"
+	puts $f "#  ^^^^^^^^^^^^^^^^^^^^^^^ modify the path to find perl on your computer#"
+	puts $f "\$HOME=\$ENV{HOME};" 
+	puts $f "\$CONFIGFILE=\"$value(configfile)\";"
+	puts $f "\$MYCONFIGFILE=\"$value(myconfigfile)\";"
+	puts $f "\$LIBDIR=\"$value(libdir)\";"
+	
+	if [catch {set g [open "bin/address" r]} result] {
+	    puts "Error on reading [exec pwd]/bin/address: $result"
+	    exit
+	} else {
+	    # Ignore the first 8 lines
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    set line [gets $g]
+	    
+	    while {![eof $g]} {
+		puts $f [gets $g]
+	    }
+	    close $g
+	}
+	close $f
+	catch {exec chmod 0755 tmp/address}
+    }
+    
+    
+    if [catch {set f [open "tmp/addressbook.config" w]} result] {
+	puts "Error on writing [exec pwd]/tmp/addressbook.config: $result"
+	exit
+    } else {
+	if [catch {set g [open "lib/addressbook.config" r]} result] {
+	    puts "Error on reading [exec pwd]/lib/addressbook.config: $result"
+	    exit
+	} else {
+	    while {![eof $g]} {
+		set line [gets $g]
+		switch -glob $line {
+		    "language*" {
+			set line "language $language"
+		    }
+		    "mycountry*" {
+			set line "mycountry $value(mycountry)"
+		    }
+		    "myareacode*" {
+			set line "myareacode $value(myareacode)"
+		    }
+		    "libdir*" {
+			set line "libdir $value(libdir)"
+		    }
+		    "adrfile *" {
+			set line "adrfile $value(adrfile)"
+		    }
+		    "adrfile1 *" {
+			set line "adrfile1 $value(adrfile)"
+		    }
+		    "adrfile2 *" {
+			if {$value(adrfile2) != ""} {
+			    set line "adrfile2 $value(adrfile2)"
+			}
+		    }
+		    "latex*" {
+			set line "latex $value(latex)"
+		    }
+		    "mpage*" {
+			set line "mpage $value(mpage)"
+		    }
+		    "dvips*" {
+			set line "dvips $value(dvips)"
+		    }
+		    "gawk*" {
+			set line "gawk $value(gawk)"
+		    }
+		}
+		puts $f $line
+	    }
+	    close $g
+	}
+	close $f
+    }
+
+    frame .l
+    pack .l
+
+    label .l.space -text " "
+    label .l.l1 -text "Addressbook is now configured."
+    label .l.l2 -text "If you want, you can verify the files in the ./tmp directory."
+    label .l.l3 -text " "
+    label .l.l4 -text "Now addressbook will be installed."
+
+    pack .l.space .l.l1 .l.l2 .l.l3 .l.l4
+ 
+    frame .l.b
+    pack .l.b
+    button .l.b.1 -text "Continue installation" -command { destroy .l ; do_install }
+    button .l.b.2 -text "Cancel installation" -command {destroy . ; exit}
+    pack .l.b.1 .l.b.2 -side left
+}
+
+proc cpbak {from to} {
+    # copy and backup
+    if {[file exists $to]} {
+	if [catch {exec mv $to $to.OLD} result] {
+	    puts stderr "Error while making backup of old programm. $result"
+	}
+    }
+    if [catch {exec cp $from $to} result] {
+	puts "*** Please invoke 'cp $from $to'"
+    }
+}
+
+proc mkd {dir} {
+    if [catch {exec mkdir -p $dir} result] {
+	if {![string match "*File exists*" $result]} {
+	    puts "*** Please invoke 'mkdir $dir'"
+	}
+    }
+}    
+
+proc lnbak {from to} {
+    # link and backup
+    if {[file exists $to]} {
+	if [catch {exec mv $to $to.OLD} result] {
+	    puts stderr "Error while making backup of old programm. $result"
+	}
+    }
+    if [catch {exec ln -s $from $to} result] {
+	puts "*** Please invoke 'ln -s $from $to'"
+    }
+}
+
+proc do_install {} {
+    global value
+
+    mkd $value(installin)
+
+    cpbak tmp/addressbook $value(installin)/addressbook
+    
+    mkd $value(libdir)
+    mkd $value(libdir)/bitmaps
+    mkd $value(libdir)/sample
+
+    cpbak tmp/addressbook.config $value(configfile)
+
+    if [catch {
+	foreach p "[glob lib/bitmaps/*]" {
+	    exec cp $p $value(libdir)/bitmaps
+	}
+    } result ] {
+	puts "*** Please invoke 'cp lib/bitmaps/* $value(libdir)/bitmaps'"
+    }
+    
+    cpbak lib/countries $value(libdir)/countries
+
+    if [catch {
+	foreach p "[glob lib/*.translation] [glob lib/*.helptext]" {
+	    exec cp $p $value(libdir)
+	}
+    } result ] {
+	puts "*** Please invoke 'cp lib/*.translation lib/*.helptext $value(libdir)'"
+    }
+    
+    if [catch {
+	foreach p "sample/README [glob sample/*.dat] [glob sample/*.fmt]" {
+	    exec cp $p $value(libdir)/sample
+	}
+    } result ] {
+	puts "*** Please invoke 'cp tmp/* $value(libdir)/sample'"
+    }
+    
+    cpbak tmp/address $value(installin)/$value(address)
+
+    lnbak $value(address) $value(installin)/$value(tel)
+    lnbak $value(address) $value(installin)/$value(fax)
+    lnbak $value(address) $value(installin)/$value(email)
+    lnbak $value(address) $value(installin)/$value(letter)
+
+    cpbak MANUAL $value(libdir)/MANUAL
+    cpbak REGISTRATION $value(libdir)/REGISTRATION
+
+    frame .m
+    pack .m
+    label .m.space -text " "
+    label .m.l1 -text "Addressbook is now installed."
+    label .m.l2 -text "If something went wrong, try to invoke the corresponding command"
+    label .m.l3 -text "manually and restart the installationprocedure after the problem has been fixed."
+    label .m.l4 -text " "
+    pack .m.space .m.l1 .m.l2 .m.l3 .m.l4
+
+    if {![file exists $value(libdir)/addresses.dat] &&
+        ![file exists $value(libdir)/addresses.dat.fmt]} {
+	    cpbak lib/addresses.dat $value(libdir)/addresses.dat
+	    cpbak lib/addresses.dat.fmt $value(libdir)/addresses.dat.fmt
+    } else {
+	cpbak lib/addresses.dat $value(libdir)/addresses_sample.dat
+	cpbak lib/addresses.dat.fmt $value(libdir)/addresses_sample.dat.fmt
+	label .m.l5 -text "Existing addresses.dat found."
+	label .m.l6 -text "No addressfile installed. You can find some in the"
+	label .m.l7 -text "sample directory: $value(libdir)/sample"
+	label .m.l8 -text " "
+	pack .m.l5 .m.l6 .m.l7 .m.l8
+    }
+    if {![file exists $value(libdir)/addresses_usa.dat] &&
+        ![file exists $value(libdir)/addresses_usa.dat.fmt]} {
+	    cpbak lib/addresses_usa.dat $value(libdir)/addresses_usa.dat
+	    cpbak lib/addresses_usa.dat.fmt $value(libdir)/addresses_usa.dat.fmt
+    }
+
+    label .m.l9 -text "To invoke the programm, just type addressbook."
+    label .m.l10 -text "If you have problems, please read the manual first."
+
+    pack .m.l9 .m.l10
+ 
+    frame .m.b
+    pack .m.b
+    button .m.b.1 -text "OK" -command { destroy . }
+    pack .m.b.1
+}
+
+
+main
+
+
+
+
+
+
+
+
+
+
+

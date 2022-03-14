@@ -1,0 +1,22 @@
+
+Here are some example files to see what you can do with
+mktable.
+
+There should be the following files:
+
+addr.dat:     A sample addressbook input file
+label.entry:  sample format for printing labels with addr.dat
+label.head
+html.entry:   sample format for creating an HTML list out of addr.dat
+html.head:
+html.foot:
+list.entry:   sample format to print a phonebook-kind of list (addr.dat)
+passwd.entry: Creates a formatted list of logins in /etc/passwd
+
+
+To run the examples call:
+
+% mktable -f label addr.dat
+% mktable -f html addr.dat
+% mktable -f list addr.dat
+% cat /etc/passwd | mktable -d: -f passwd

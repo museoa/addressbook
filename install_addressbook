@@ -1,0 +1,12 @@
+#!/bin/sh
+wish -f install.wish
+echo " "
+echo "Installation finished."
+echo " "
+echo "If the installation failed you can try to install manually."
+echo "Read the corresponding section in the file MANUAL."
+echo " "
+echo "If everything went well, I wish you good luck and if you use this"
+echo "programm regularly, please fill out the REGISTRATION form and send"
+echo "it to me. It doesn't cost anything, it is just for statistics and"
+echo "shows me, that there are some people out there using my programm."

@@ -1,0 +1,211 @@
+README for mktable 1.0 (last updated 96/04/17)
+       Martin Paul,  <martin@par.univie.ac.at>
+----------------------------------------------
+
+o) What is it ?
+
+mktable can be used to generate printable lists, html files,
+labels, etc. based on the data you keep in your addressbook
+database. In fact, it's only that far connected to addressbook
+as they share the same input format for their data.
+
+This is achieved with a rather easy method of format descriptions,
+similar to the printf() format strings.
+
+This tool has been made as generic as possible so it can both
+
+- take nearly all kind of data as its input as long as it is
+  tuple oriented.
+
+and
+
+- produce many different forms of output. It can be used to present
+  the same data on the web (via html), on various lists and printer
+  labels.
+
+
+o) Compile and install
+
+The directory in which this README resides should contain the
+following files and directories:
+
+README:       This file.
+Makefile:     The Makefile used to compile mktable.
+examples:     Some examples to show what mktable can do for you.
+mktable.c:    The sources.
+parse.c
+parse.h
+
+To compile the executable 'mktable' a simple 'make' should be enough
+on most systems. The C code is straight ANSI C, so you will need
+an ANSI C compiler (like gcc) to compile it. If you don't have
+GNU cc (gcc) on your system, edit the Makefile and change the 'CC='
+statement to use an ANSI C compiler you have.
+
+If you have problems to compile mktable, please send a short message
+to the author, describing your problems (the email address is at
+the end of this README).
+
+Currently there is no 'install' target in the Makefile, so you
+just copy the 'mktable' binary into a directory in your search
+path (e.g. ~/bin).
+
+You can create a directory anywhere on your system where you want
+to keep your standard formats (read later on the files needed
+to define such a format). Just point the environment variable
+MKTABLEFORMATS to this directory. If, for example, you want 
+/usr/local/lib/mktable to be your standard format directory,
+add a 
+
+  setenv MKTABLEFORMATS /usr/local/lib/mktable
+
+to your .cshrc (use appropriate syntax if you have a different shell).
+
+If everything went well, 'mktable -h' should print the usage information.
+
+
+o) How to use it ?
+
+The input format is the same as addressbook uses. Another good 
+example would be the /etc/passwd. Shortly, a file that contains
+lines (one line is one database entry) and each line consists
+of fields, seperated by a seperator char that must not appear in
+the text of the fields. Here is a short example:
+
+	A:Austria
+	D:Germany
+	I:Italy
+
+The file has three entries (lines), each with two fields (the first
+one the postal code of the country, the second the full name).
+As this is rather common the first field has the number 0, and the
+second one the number 1.
+
+To define a format, you can use three files. All must have the name
+of the format (e.g. 'list') plus a special extension.
+
+list.head:
+  Contains text that should be printed before the actual list
+  is printed. This is pure text, no special characters are 
+  evaluated in this file. You can use as many lines as you need.
+
+list.foot:
+  Contains text that should be printed after the actual list.
+  As for the contents it's the same as the .head file.
+
+list.entry:
+  This file describes the lookalike of a single entry in the database.
+  It can be more than one line long, and contain any text you think
+  to be useful. Here you can write field specifications, which will later
+  be substituted by the actual field value.
+
+list.head and list.entry should be rather straight forward, it's
+just text. You don't need to create these files (or one of them)
+if you don't need a header/footer. If mktable doesn't find them, 
+it just prints nothing.
+
+The list.entry file must exist. Let's look at a small example
+for the above data file:
+
+  @0: @1
+
+This means nothing else than: print field 0 (the first field), than
+a colon and a space, then field 1. The output from mktable would be
+like that:
+
+  A: Austria
+  D: Germany
+  I: Italy
+
+The '@' is a special char, it marks the beginning of a field specification.
+After an @ you put the field number, and optionally, arguments in brackets
+('[', ']'). As arguments a field length and field justification is allowed.
+Example:
+
+  @0[3]: @1[10R]
+
+This means: Field 0 should be three chars long, and left justified (the
+default). Field 1 should be 10 chars long and right justified (the 'R').
+The output would be like this:
+
+  A  :    Austria
+  D  :    Germany
+  I  :      Italy
+
+In the brackets you can use a field length alone, or a field length plus
+justification. Justification alone would not be useful, because the output
+field is byu default exactly the same size as the input field, so there
+is no room for justification anyhow.
+
+Another example:
+
+  @1[10] | @1[10R]
+
+output:
+
+  Austria    |    Austria
+  Germany    |    Germany
+  Italy      |      Italy
+
+The only new thing here is that you can reference a field not only once
+but as often as you want.
+
+One special thing about these field formats is that you specify
+length and justification for a sum of fields. This can be useful
+when you want to concatenate two or more fields in the output
+and limit the length for the whole string. This may sound weird,
+here's an example. Assume this input data:
+
+  John F.;Kennedy
+  Abraham;Lincoln
+  Bill;Clinton
+
+It's a list with two fields per entry, forename and last name.
+Now we would like to print name labels, which have a given size
+(e.g. 30 chars wide). We don't want to print over the edge of
+the label, so we do the following:
+
+  @0+1[30]
+
+This means: Concatenate the two fields (seperated by a space by default)
+and limit them to 30 chars. It would not have been a solution to use
+something like:
+
+  @0[15] @1[15]
+
+It's left as an exercise to the reader to find out the difference
+between these two formats. You can glue as many fields as you like,
+just use
+
+  @<nr>+<nr>+<nr> ...
+
+If a field is cut off to fit the output length, the last character
+is substituted with an exclamation mark ('!') and the rest is thrown
+away.
+
+As you may have noticed, we used different seperator chars in the 
+above data file examples. You have to tell mktable what seperator
+you use with a command line option, '-d<sep>'. ';' is the default;
+to use a colon call mktable with 'mktable -d: ....'.
+
+The only thing left to say on usage is that you can call mktable
+with '-c' and just a data file (no format). This will check the
+input file and print some statistics (number of entries, fields,
+max lengths of each field ...).
+
+
+o) Examples
+
+Examples and a README are in examples/
+
+
+o) Problems, suggestions, etc.
+
+Please mail all your suggestions about this program
+to Martin Paul, <martin@par.univie.ac.at>. I'm very
+interesting in your opinion, so don't hesitate to
+tell me if you find this little tool useful or not.
+
+If you have ideas for enhancements or new features
+look into the TODO file first. If it's already there,
+someone else thought of it before :)

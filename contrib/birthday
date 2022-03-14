@@ -1,0 +1,52 @@
+#!/bin/sh
+# 
+# Birthday remember script
+#
+# Clemens Durka (durka@informatik.tu-muenchen.de)
+#
+# Please adjust the following three variables, the fields for the first
+# and lastname and the field, where the birthday is stored. The field
+# begins to count with 1 (not 0 as in the formatfile - sorry)
+#
+NAME1=1
+NAME2=2
+BIRTHDAYFIELD=8
+#
+# Please set the addressbookfile
+#
+ADDRESSBOOKFILE=~/pub/adr/lib/addresses.dat
+#
+# Please set the dateformat
+#
+# DD.MM.YYYY: german speaking countries 
+DATEFORMAT1=`date +%d.%m`\\.
+DATEFORMAT2=\\.`date +%m`\\.
+#
+# MM/DD/YYYY: USA 
+#DATEFORMAT1=`date +%m/%d`\\/
+#DATEFORMAT2=" "`date +%m`\\/
+#
+# DD-MM-YYYY: Great Britain 
+#DATEFORMAT1=`date +%d-%m`\\-
+#DATEFORMAT2=\\-`date +%m`\\-
+
+# DD/MM/YYYY: France 
+#DATEFORMAT1=`date +%d/%m`\\/
+#DATEFORMAT2=\\/`date +%m`\\/
+#
+
+date +"%A, %d %B %Y"
+echo
+
+echo "Today's birthday:"
+cut -f ${NAME1},${NAME2},${BIRTHDAYFIELD} -d \; ${ADDRESSBOOKFILE} | sed 's/;/ /g' | \
+    grep ${DATEFORMAT1} | \
+    awk '{print $3 ": ",$1,$2}' 
+echo
+echo "This month's birthdays:"
+cut -f ${NAME1},${NAME2},${BIRTHDAYFIELD} -d \; ${ADDRESSBOOKFILE} | sed 's/;/ /g' | \
+    grep ${DATEFORMAT2} | sort +2 | \
+#    sed 's/ \([^ ]* *[^ ]*\)  \(.*\)/\2: \1/g'
+    awk '{print $3 ":",$1,$2}'
+echo
+

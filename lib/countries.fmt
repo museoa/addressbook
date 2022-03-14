@@ -1,0 +1,45 @@
+# formatfile to edit the countrydatabase file
+# part of the addressbook program
+#
+# if you find errors or improvements, please send me a mail
+# so that I can integrate it in the next version
+#
+# Clemens Durka (clemens@dagobah.de)
+0 other1
+1 other2
+2 other3
+3 other4
+4 other5
+5 other6
+6 other7
+7 other8
+8 other9
+9 other10
+10 other11
+11 other12
+12 other13
+13 other14
+14 other15
+
+label1 "Postal Country Code"
+label2 "ISO Country Code"
+label3 "intl. Dialcode"
+label4 "intl. Accesscode"
+label5 "natl. Longdistance"
+label6 "Zip and City Format"
+label7 "local Name"
+label8 "english Name"
+label9 "german Name"
+label10 "french Name"
+label11 "spanish Name"
+label12 "dutch Name"
+label13 "swedish Name"
+label14 "italian Name"
+label15 "finnish Name"
+
+separatorchar ;
+listboxformat "%s %s"
+listboxentry1 7
+listboxentry2 -1
+sort1 7
+sort2 1

@@ -1,0 +1,42 @@
+Registration
+
+Don't be shocked, the program is published under the GNU Public
+Licence (see COPYING). However, if you like the program and you
+use it regularly, it would be nice, if you would send me a short
+email, where you write what you like, what suggestions you have,
+how you were informed about the existence of this program,
+how many users use it and if you want to be notified, if a new
+version comes out. This registration doesn't cost anything, I
+will not use your email address for any purpose, unless you want to
+be notified of new versions. This registration helps me to track down
+the number of people who use it, the problems and the important
+things who need to be developed more.
+
+Use may use a form like this which you can find in the addressbook
+libdir as REGISTRATION and send it to the following address:
+
+clemens@dagobah.de
+
+Subject: Addressbook Registration
+ 
+The brand of my computer is           :
+Prozessor is a                        :
+Version and Name of operating system  :
+Version of tk used (3.6, 4.0 or ... ) :
+Version of addressbook                :
+No. of people who use it approx.      :
+The size of my database is approx.    :
+I heard about this program from       :
+I got the source from                 :
+I installed as (root/user)            :
+I like it, because                    :
+I don't like                          :
+I use it at home / at work            :
+The function I use most               :
+The feature I miss most               :
+I want to be notified of new versions :
+For futur versions, I would need
+ Export/Import from these formats     :
+ Which kind of printing               :
+Comments                              :
+

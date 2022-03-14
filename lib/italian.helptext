@@ -1,0 +1,72 @@
+# Help Texts displayed
+#
+# italian version
+#
+set helpTopics(context) {Sfortunatamente, questo programma non supporta l'aiuto contestuale nel modo usuale, ma si può ottenere lo stesso effetto premendo F1 o Aiuto mentre il puntatore è sulla finestra che vi interessa in qualunque momento}
+set helpTopics(help) {Questo programma fornisce un aiuto molto primitivo. A parte le voci di questo menu, potete richiedere aiuto sulle singole finestre muovendo il puntatore sulla finestra e premendo F1 o Aiuto}
+set helpTopics(window) {Questo è un programma per la gestione di un'indirizzario.}
+set helpTopics(keys) "I seguenti tasti di scelta rapida sono definiti in questo programma (in aggiunta a quelli già definiti per i record):\nCtrl+C:\t\t$mes(azzera)\nCtrl+A:\t\t$mes(aggiungi)\nCtrl+U:\t\t$mes(aggiorna)\nCtrl+S:\t\t$mes(cerca)\nCtrl+G\t\t$mes(vista)\nCtrl+X:\t\t$mes(esci)\nCtrl+P\t\t$mes(stampa)\nPag. Su\t\tRecord precedente\nPag. Giu\tRecordo successivo\nInvio\t\tRiga successiva""
+set helpTopics(.f.menu) {Niente da fare qui.}
+set helpTopics(.f.menu.space) {Niente da fare qui.}
+set helpTopics(.f.menu.file) {Questo è il menu "Archivi".  Può essere usato per eseguire alcune operazioni che riguardano l'indirizzario, come il caricamento di un archivio o l'uscita.}
+set helpTopics(.f.menu.edit) {Questo è il menu "Modifica". Puoi azzerare un campo, aggiungere o modificare record e fare ricerche}
+set helpTopics(.f.menu.goto) {Questo è il menu "Vai a". Si possono fare le stesse azioni dei bottoni sotto la lista.}
+set helpTopics(.f.menu.options) {Questo è il menu "Opzioni".  Può essere usato per cambiare le opzioni di ricerca e le opzioni globali e di ogni archivio}
+set helpTopics(.f.menu.countries) {Questo è il menu "Nazioni".  Qui puoi cercare il codice del paese}
+set helpTopics(.f.menu.help) {Questo è il menu d'aiuto. Che altro?.}
+set helpTopics(.f.main.entry.0.entry) \
+"In questi campi dell'indirizzario, devi inserire i dati opportuni \
+\nEcco alcuni esempi sulla compilazione:\n\n\
+aggiunta\t\tqualcosa tipo c/o che non sta in via\n\
+\t\tsecondo le convenzioni del paese: prima la via poi il numero civivo o\n\
+\t\tprima il numero, poi la via (come in Francia)\n\
+nazione\tUsate preferibilmente per i paesi i codici delle targhe automobilistiche internazionali\n\
+\t\. Selezionando il bottone "Nazioni" avrete una lista completa.\n\
+\t\tI nomi completi verranno automaticamente sostituiti.\n\
+cap\t\tCAP, compreso lo stato (USA) o le lettere (NL)\n\
+stato\t\tper gli utenti USA. Così evitate di metterlo nel cap\n\
+città\t\tCittà senza cap\n\
+data di nascita\tformato libero, ma coerente. Io uso gg.mm.aaaa magari\n\
+\t\tin futuro verrà aggiunta un applicazione promemoria per i compleanni\n\
+telefono*\t\tIMPORTANTE: scrivetelo come se foste già in quel paese\n\
+\t\ti prefissi internazionali saranno aggiunti automaticamente, se\n\
+\t\tla vostra configurazione in addressbook.config è corretta.\n\
+\t\t1-234-567-7890\t(USA & Canada)\n\
+\t\t(089)1234567\t(Germania e molti altri)\n\
+\t\t12345678\t(Danimarca e France tranne Parigi)\n\
+\t\t(1)44556677\t(zona di Parigi)\n\
+email\t\tindirizzo email completo\n\
+www\t\tURL della homepage (compreso http://)"
+set helpTopics(.f) {Niente da fare qui.}
+set helpTopics(.f.main) {Niente da fare qui.}
+set helpTopics(.f.main.entry) {Niente da fare qui.}
+set helpTopics(.f.main.list) {Niente da fare qui.}
+set helpTopics(.f.main.list.title) {Premi qui e vedrai :-)}
+set helpTopics(.f.main.list.lb.box) {Lista con i nomi delle persone. Premete il bottone per vedere l'indirizzo corrispondente.}
+set helpTopics(.f.main.list.lb.scroll) {Barra di scorrimento per muoversi nella lista.}
+set helpTopics(.f.main.list.status.0) {Mostra alcune informazioni di stato}
+set helpTopics(.f.main.list.status.1) {Mostra alcune informazioni di stato}
+set helpTopics(.f.main.list.status.2) {Mostra alcune informazioni di stato}
+set helpTopics(.f.main.list.status.3.0) {Spostamento nella lista (vai all'inizio)}
+set helpTopics(.f.main.list.status.3.1) {Spostamento nella lista (vai indietro di 10 record)}
+set helpTopics(.f.main.list.status.3.2) {Spostamento nella lista (vai indietro)}
+set helpTopics(.f.main.list.status.3.3) {Spostamento nella lista (vai avanti)}
+set helpTopics(.f.main.list.status.3.4) {Spostamento nella lista (vai avanti di 10 record)}
+set helpTopics(.f.main.list.status.3.5) {Spostamento nella lista (vai alla fine)}
+set helpTopics(.f.main.list.status.4.b) {Spostamento rapido nella lista (azzera i campi per immettere nuovi dati)}
+set helpTopics(.f.main.list.status.4.e) {Spostamento rapido nella lista (premi alcune lettere poi vedi)}
+set helpTopics(.f.main.abc) {Niente da fare qui.}
+set helpTopics(.f.main.abc.0) {Spostamento rapido nella lista alla lettera premuta. Lettere battute in rapida sequenza si accodano, altrimenti la ricerca rapida riprende da zero.}
+set helpTopics(.f.main.abc.space) {Niente da fare qui.}
+set helpTopics(.f.main.abc.mail) {Restituisce l'indirizzo completo (a seconda dell'opzione stdout_only o su stdout o ad un programma)}
+set helpTopics(.f.main.abc.phonepriv) {Restituisce il numero privato (a seconda dell'opzione stdout_only o su stdout o ad un programma che chiama direttamente)}
+set helpTopics(.f.main.abc.phonework) {Restituisce il numero dell'ufficio (a seconda dell'opzione stdout_only o su stdout o ad un programma che chiama direttamente)}
+set helpTopics(.f.main.abc.phone) {Restituisce il numero di telefono (a seconda dell'opzione stdout_only o su stdout o ad un programma che chiama direttamente)}
+set helpTopics(.f.main.abc.fax) {Restituisce il numero del fax (a seconda dell'opzione stdout_only o su stdout o ad un programma che manda direttamente il fax)}
+set helpTopics(.f.main.abc.email) {Restituisce l'indirizzo di email (a seconda dell'opzione stdout_only o su stdout o ad un programma che spedisce l'email)}
+set helpTopics(.f.buttons) {Niente da fare qui.}
+set helpTopics(.f.buttons.clear) {Azzera i campi.}
+set helpTopics(.f.buttons.add) {Aggiunge un record .}
+set helpTopics(.f.buttons.change) {Modifica un record esistente.}
+set helpTopics(.f.buttons.search) {Esegue una ricerca.}
+set helpTopics(.f.buttons.auswahl) {Mostra tutti gli indirizzi selezonati nella lista.}

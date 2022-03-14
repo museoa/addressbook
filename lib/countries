@@ -1,0 +1,195 @@
+# Country database for addressbook
+#
+# Infos collected by Clemens Durka (clemens@dagobah.de)
+# If you encounter any errors, please report it to me.
+#
+# Fields are:
+# Postal countrycode;ISO countrycode;intl.dialcode;intl.accescode;natl.longdistancedigit;Zip_and_city_format(eu,uk,us);local name;english name;german name;french name;spanish name;dutch name;swedish name;italian name;finnish name
+#
+AFG;af;;?;?;eu;Afganistan;Afghanistan;Afghanistan;Afghanistan;Afghanistan;Afganistan;Afghanistan;Afghanistan;Afghanistan
+AL;al;355;?;?;eu;Shqiperia;Albania;Albanien;Albanie;Albania;Albanië;Albania;Albania;Albania
+DZ;dz;213;?;?;eu;Djazairia;Algeria;Algerien;Algerie;Algeria;Algerije;Algeria;Algeria;Algeria
+AND;ad;376;?;?;eu;Andorra;Andorra;Andorra;Andorre;Andorra;Andorra;Andorra;Andorra;Andorra
+ANG;ao;244;?;?;eu;Angola;Angola;Angola;Angola;Angola;Angola;Angola;Angola;Angola
+AG;ag;1809;011;1;eu;Antigua and Barbuda;Antigua and Barbuda;Antigua und Barbuda;Antigua et Barbuda;Antigua y Barbuda;Antigua en Barbuda;Antigua and Barbuda;Antigua et Barbuda;Antigua ja Barbuda
+RA;ar;54;00;0;eu;Argentina;Argentina;Argentinien;Argentine;Argentina;Argentinië;Argentina;Argentina;Argentina
+ARM;am;7;?;?;eu;Hayastan;Armenia;Armenien;Armenie;Armenia;Armenië;Armenia;Armenia;Armenia
+AZ;az;994;?;?;eu;Azerbaycan;Azerbaijan;Aserbaidschan;Azerbaijan;Azerbaijan;Azerbaidzjan;Azerbaijan;Azerbaijan;Azerbaijan
+AUS;au;61;?;0;uk;Australia;Australia;Australien;Australie;Australia;Australië;Australia;Australia;Australia
+A;at;43;00;0;eu;Österreich;Austria;Österreich;Autriche;Austria;Oostenrijk;Austria;Austria;Itävalta
+BS;bs;1809;011;1;eu;Bahamas;Bahamas;Bahamas;Bahamas;Bahamas;Bahamas;Bahamas;Bahamas;Bahamas
+BRN;bh;973;?;?;eu;Bahrain;Bahrain;Bahrain;Bahrain;Bahrain;Bahrein;Bahrain;Bahrain;Bahrain
+BD;bd;880;?;?;eu;Bamlades;Bangladesh;Bangladesch;Bangladesh;Bangladesh;Bangladesh;Bangladesh;Bangladesh;Bangladesh
+BDS;bb;1809;011;1;eu;Barbados;Barbados;Barbados;Barbados;Barbados;Barbados;Barbados;Barbados;Barbados
+BY;by;7;?;?;eu;Belarus;Belarus;Weißrußland;Belarussie;Belarus;Wit-Rusland;Belarus;Belarus;Valko-Venäjä
+B;be;32;00;;eu;Belgique;Belgium;Belgien;Belgique;Belgica;België;Belgium;Belgica;Belgia
+BH;bz;501;00;0;eu;Belize;Belize;Belize;Belize;Belize;Belize;Belize;Belize;Belize
+RPB;bj;229;?;?;eu;Bénin;Benin;Benin;Bénin;Benin;Benin;Benin;Benin;Benin
+BM;bm;1809;011;1;eu;Bermudas;Bermudas;Bermudas;Bermudas;Bermudas;Bermudas;Bermudas;Bermudas;Bermudas
+BHT;bt;975;?;?;eu;Druk Yul;Bhutan;Bhutan;Bhutan;Bhutan;Bhutan;Bhutan;Bhutan;Bhutan
+BOL;bo;591;?;?;eu;Bolivia;Bolivia;Bolivien;Bolivie;Bolivie;Bolivië;Bolivia;Bolivie;Bolivia
+BIH;ba;387;?;?;eu;Bosna i Hercegovina;Bosnia-Herzegovina;Bosnien-Herzegowina;Bosnie-Herzegovie;Bosnie-Herzegovie;Bosnië-Herzegovina;Bosnia-Herzegovina;Bosnie-Herzegovie;Bosnia ja Herzegovina
+RB;bw;267;?;?;eu;Botswana;Botswana;Botsuana;Botswana;Botswana;Botswana;Botswana;Botswana;Botswana
+BR;br;55;?;0;eu;Brazil;Brazil;Brasilien;Brésil;Brésil;Brazilië;Brazil;Brésil;Brasilia
+BRU;bn;673;?;?;eu;Brunei;Brunei;Brunei;Brunei;Brunei;Brunei;Brunei;Brunei;Brunei
+BG;bg;359;?;0;eu;Bulgaria;Bulgaria;Bulgarien;Bulgarie;Bulgaria;Bulgarije;Bulgaria;Bulgaria;Bulgaria
+BF;bf;226;?;?;eu;Burkina Faso;Burkina Faso;Burkina Faso;Burkina Faso;Burkina Faso;Burkina Faso;Burkina Faso;Burkina Faso;Burkina Faso
+BU;bi;257;?;?;eu;Burundi;Burundi;Burundi;Burundi;Burundi;Burundi;Burundi;Burundi;Burundi
+K;kh;855;?;?;eu;Kâmpuchéa;Cambodia;Kambodscha;Cambodia;Cambodia;Cambodja;Cambodia;Cambodia;Kamputsea
+CAM;cm;237;?;?;eu;Cameroon;Cameroon;Kamerun;Camerun;Camerun;Kameroen;Cameroon;Camerun;Kamerun
+CDN;ca;1;011;1;uk;Canada;Canada;Kanada;Canada;Canada;Canada;Canada;Canada;Kanada
+CV;cv;238;?;?;eu;Cabo Verde;Cape Verde;Kap Verde;Cap Verde;Cap Verde;Kaapverdische Eilanden;Cape Verde;Cap Verde;Kap Verde
+RCA;cf;236;?;?;eu;République centrafricaine;Central African Republic;Zentralafrikanische Republik;République centrafricaine;Republica de Africa Central;Centraal Afrikaanse Republiek;Central African Republic;Republica de Africa Central;Keski-Afrikka
+RCH;cl;56;00;0;eu;Chile;Chile;Chile;Chile;Chile;Chili;Chile;Chile;Chile
+CN;cn;86;?;?;eu;Zhongguo;China;China;Chine;China;China;China;China;Kiina
+CO;co;57;?;?;eu;Colombia;Columbia;Kolumbien;Colombie;Colombia;Columbia;Columbia;Colombia;Kolumbia
+RCB;cg;242;?;?;eu;Congo;Congo;Kongo;Congo;Congo;Congo;Congo;Congo;Kongo
+CR;cr;506;00;;eu;Costa Rica;Costa Rica;Costa Rica;Costa Rica;Costa Rica;Costa Rica;Costa Rica;Costa Rica;Costa Rica
+CI;ci;225;?;?;eu;Côte d'Ivoire;Côte d'Ivoire;Elfenbeinküste;Côte d'Ivoire;Côte d'Ivoire;Ivoorkust;Côte d'Ivoire;Côte d'Ivoire;Côte d'Ivoire
+HR;hr;385;?;?;eu;Hrvatska;Croatia;Kroatien;Croatie;Croatia;Kroatië;Croatia;Croatia;Kroatia
+C;cu;53;?;?;eu;Cuba;Cuba;Kuba;Cuba;Cuba;Cuba;Cuba;Cuba;Kuuba
+CY;cy;357;?;?;eu;Kypros;Cyprus;Zypern;Chypre;Chipre;Cyprus;Cyprus;Chipre;Kypros
+CZ;cz;42;?;?;eu;Czech Republic;Czech Republic;Tschechische Republik;République Tcheque;Republica Cheque;Tsjechische Republiek;Czech Republic;Republica Cheque;Tzekin tasavalta
+DK;dk;45;00;;eu;Danmark;Denmark;Dänemark;Danmark;Dinamarca;Denemarken;Denmark;Dinamarca;Tanska
+WD;dm;1809;011;1;eu;Dominica;Dominica;Dominika;Dominica;Dominica;Dominica;Dominica;Dominica;Dominica
+DOM;do;1809;011;1;eu;Rebublica Dominicana;Dominican Republic;Dominikanische Republik;République Dominicaine;Republica Dominicana;Dominicaanse Republiek;Dominican Republic;Republica Dominicana;Dominikaaninen tasavalta
+DJI;dj;253;?;?;eu;Djibouti;Djibouti;Dschibuti;Djibouti;Djibouti;Djibouti;Djibouti;Djibouti;Djibouti
+EC;ec;593;?;?;eu;Ecuador;Ecuador;Ecuador;Ecuador;Ecuador;Ecuador;Ecuador;Ecuador;Ecuador
+ET;eg;20;?;?;eu;Egypt;Egypt;Ägypten;Egypte;Egipto;Egypte;Egypt;Egipto;Egypti
+ES;sv;503;00;;eu;El Salvador;El Salvador;El Salvador;El Salvador;El Salvador;El Salvador;El Salvador;El Salvador;El Salvador
+EQ;eq;240;?;?;eu;Guinea Ecuatorial;Equatorial Guinea;Äquatorialguinea;Guinée equatorial;Guinea Ecuatorial;Equatoriaal Guinea;Equatorial Guinea;Guinea Ecuatorial;Päiväntasaajan Guinea
+ER;er;291;?;?;eu;Eritrea;Eritrea;Eritrea;Eritrea;Eritrea;Eritrea;Eritrea;Eritrea;Eritrea
+EST;ee;372;?;?;eu;Eesti Vabariik;Estonia;Estland;Estonie;Estonia;Estland;Estonia;Estonia;Viro
+ETH;et;251;?;?;eu;Ityop'ya;Ethiopia;Äthiopien;Etiopie;Etiopia;Etiopië;Ethiopia;Etiopia;Etiopia
+FR;fo;298;?;?;eu;Faroer;Faroer;Färöer;Faroer;Faroer;Faroër;Faroer;Faroer;Färsaaret
+FJI;fj;679;?;?;eu;Fiji;Fiji;Fidschi;Fidji;Fidji;Fiji;Fiji;Fidji;Fiji
+SF;fi;358;?;0;eu;Suomi;Finland;Finnland;Finlande;Finlandia;Finland;Finland;Finlandia;Suomi
+F;fr;33;00;0;eu;France;France;Frankreich;France;Francia;Frankrijk;France;Francia;Ranska
+G;ga;241;?;?;eu;Gabon;Gabon;Gabun;Gabon;Gabon;Gabon;Gabon;Gabon;Gabon
+WAG;gm;220;?;?;eu;The Gambia;The Gambia;Gambia;Gambia;Gambia;Gambia;Gambia;Gambia;Gambia
+GE;ge;995;?;?;eu;Sak'art'velo;Georgia;Georgien;Georgie;Georgia;Georgië;Georgia;Georgia;Georgia
+D;de;49;00;0;eu;Deutschland;Germany;Deutschland;Allemagne;Alemania;Duitsland;Tyskland;Germania;Saksa
+GH;gh;233;?;?;eu;Ghana;Ghana;Ghana;Ghana;Ghana;Ghana;Ghana;Ghana;Ghana
+GBZ;gi;350;?;?;uk;Gibraltar;Gibraltar;Gibraltar;Gibraltar;Gibraltar;Gibraltar;Gibraltar;Gibraltar;Gibraltar
+GB;uk;44;00;0;uk;Great Britain;Great Britain;Großbritannien;Grande Bretagne;Grande Bretagnia;Verenigd Koninkrijk;Great Britain;Grande Bretagnia;Iso-Britannia
+GR;gr;30;?;0;eu;Hellas;Greece;Griechenland;Grèce;Grecia;Griekenland;Greece;Grecia;Kreikka
+WG;gd;1809;011;1;eu;Grenada;Grenada;Grenada;Grenada;Grenada;Grenada;Grenada;Grenada;Grenada
+GCA;gt;502;00;0;uk;Guatemala;Guatemala;Guatemala;Guatemala;Guatemala;Guatemala;Guatemala;Guatemala;Guatemala
+RG;gn;224;?;?;eu;Guinée;Guinea;Guinea;Guinée;Guinea;Guinea;Guinea;Guinea;Guinea
+GNB;gw;245;?;?;eu;Guiné-Bissau;Guinea-Bissau;Guinea-Bissau;Guinée-Bissau;Guinea-Bissau;Guinea-Bissau;Guinea-Bissau;Guinea-Bissau;Guinea-Bissau
+GUY;gy;592;?;?;eu;Guyana;Guyana;Guyana;Guyane;Guyane;Guyana;Guyana;Guyane;Guyana
+HA;ht;509;?;;eu;Haïti;Haiti;Haiti;Haïti;Haiti;Haïti;Haiti;Haiti;Haiti
+HN;hn;504;00;;eu;Honduras;Honduras;Honduras;Honduras;Honduras;Honduras;Honduras;Honduras;Honduras
+HK;hk;852;?;?;eu;Hongkong;Hongkong;Hongkong;Hongkong;Hongkong;Hongkong;Hongkong;Hongkong;Hongkong
+H;hu;36;?;?;eu;Magyarorszag;Hungary;Ungarn;Hongrie;Hungria;Hongarije;Hungary;Hungria;Unkari
+IS;is;354;?;?;eu;Island;Iceland;Island;Islande;Islandia;IJsland;Iceland;Islandia;Islanti
+IND;in;91;?;?;uk;India;India;Indien;Inde;India;India;India;India;Intia
+RI;id;62;?;?;eu;Indonesia;Indonesia;Indonesien;Indonesie;Indonesia;Indonesië;Indonesia;Indonesia;Indonesia
+IR;ir;98;?;?;eu;Iran;Iran;Iran;Iran;Iran;Iran;Iran;Iran;Iran
+IRQ;iq;964;?;?;eu;Iraq;Iraq;Irak;Iraq;Iraq;Irak;Iraq;Iraq;Irak
+IRL;ie;353;?;?;eu;Eire;Ireland (Republic);Irland (Republik);Irlande (République);Irlanda (Republica);Ierland (Republic);Ireland (Republic);Irlanda (Republica);Irlanti
+IL;il;972;?;0;eu;Yisra'él;Israel;Israel;Israël;Israel;Israël;Israel;Israel;Israel
+I;it;39;00;0;eu;Italia;Italy;Italien;Italie;Italia;Italië;Italy;Italia;Italia
+JA;jm;1809;011;1;eu;Jamaica;Jamaica;Jamaika;Jamaica;Jamaica;Jamaica;Jamaica;Jamaica;Jamaika
+J;jp;81;?;0;us;Nippon;Japan;Japan;Japon;Japon;Japan;Japan;Japon;Japani
+JOR;jo;962;?;?;eu;al-Urdunn;Jordan;Jordanien;Jordanie;Jordania;Jordanië;Jordan;Jordania;Jordania
+KZ;kz;7;?;?;eu;Kazakstan;Kazakhstan;Kasachstan;Kazakhstan;Kazakhstan;Kazachstan;Kazakhstan;Kazakhstan;Kazakstan
+EAK;ke;254;?;?;eu;Kenya;Kenya;Kenia;Kenia;Kenia;Kenia;Kenya;Kenia;Kenia
+KIR;ki;686;?;?;eu;Kiribati;Kiribati;Kiribati;Kiribati;Kiribati;Kiribati;Kiribati;Kiribati;Kiribati
+KWT;kw;965;?;?;eu;Kuwayt;Kuwait;Kuwait;Kuwait;Kuwait;Kuwait;Kuwait;Kuwait;Kuwait
+KS;kg;7;?;?;eu;Kyrgyzstan;Kyrgyzstan;Kirgistan;Kyrgyzstan;Kyrgyzstan;Kirgiezië;Kyrgyzstan;Kyrgyzstan;Kirgisia
+LAO;la;856;?;?;eu;Lao;Laos;Laos;Laos;Laos;Laos;Laos;Laos;Laos
+LV;lv;371;?;?;eu;Latvija;Lativa;Lettland;Lativa;Lativa;Letland;Lativa;Lativa;Latvia
+RL;lb;961;?;?;eu;Lubnan;Lebanon;Libanon;Leban;Lebanon;Libanon;Lebanon;Lebanon;Libanon
+LS;ls;266;?;?;eu;Lesotho;Lesotho;Lesotho;Lesotho;Lesotho;Lesotho;Lesotho;Lesotho;Lesotho
+LB;lr;231;?;?;eu;Liberia;Liberia;Liberia;Liberia;Liberia;Liberia;Liberia;Liberia;Liberia
+LAR;ly;218;?;?;eu;Libiyya;Libya;Libyen;Libie;Libia;Libië;Libya;Libia;Libya
+FL;li;41;00;eu;;Lichtenstein;Lichtenstein;Lichtenstein;Lichtenstein;Lichtenstein;Lichtenstein;Lichtenstein;Lichtenstein;Lichtenstein
+LT;lt;370;?;?;eu;Lithuania;Lithuania;Littauen;Lithuania;Lithuania;Litouwen;Lithuania;Lithuania;Liettua
+L;lu;352;00;;eu;Luxembourg;Luxembourg;Luxemburg;Luxembourg;Luxemburgo;Luxembourg;Luxembourg;Luxemburgo;Luxemburg
+MK;mk;389;?;?;eu;Makedonija;Macedonia;Mazedonien;Macedonia;Macedonia;Macedonië;Macedonia;Macedonia;Macedonia
+RM;mg;261;?;?;eu;Madagasikara;Madagascar;Madagaskar;Madagascar;Madagascar;Madagascar;Madagascar;Madagascar;Madagaskar
+MW;mw;265;?;?;eu;Malawi;Malawi;Malawi;Malawi;Malawi;Malawi;Malawi;Malawi;Malawi
+MAL;my;60;?;?;eu;Malaysia;Malaysia;Malaysia;Malaysie;Malaysie;Maleisië;Malaysia;Malaysie;Malesia
+RMM;ml;223;?;?;eu;Mali;Mali;Mali;Mali;Mali;Mali;Mali;Mali;Mali
+M;mt;356;?;?;eu;Malta;Malta;Malta;Malte;Malte;Malta;Malta;Malte;Malta
+RIM;mr;222;?;?;eu;Mauretania;Mauretania;Mauretanien;Mauretanie;Mauretanie;Mauretanië;Mauretania;Mauretanie;Mauritania
+MS;mu;230;?;?;eu;Mauritius;Mauritius;Mauritius;Ile Maurice;Ile Maurice;Mauritius;Mauritius;Ile Maurice;Mauritius
+MEX;mx;52;98;91;us;México;Mexico;Mexiko;Méxique;México;Mexico;Mexico;México;Meksiko
+MD;md;373;?;?;eu;Moldova;Moldova;Moldau;Moldawie;Moldawia;Moldavië;Moldova;Moldawia;Moldova
+MC;mc;33;19;;eu;Monaco;Monaco;Monaco;Monaco;Monaco;Monaco;Monaco;Monaco;Monaco
+MNG;mn;976;?;?;eu;Monggol Ulus;Mongolia;Mongolei;Mongolie;Mongolia;Mongolië;Mongolia;Mongolia;Mongolia
+MA;ma;212;?;?;eu;Morocco;Morocco;Marokko;Maroc;Marruecos;Marokko;Morocco;Marruecos;Marokko
+MOC;mz;258;?;?;eu;Moçambique;Mozambique;Mosambique;Mosambique;Mosambique;Mozambique;Mozambique;Mosambique;Mosambik
+MYA;mm;95;?;?;eu;Myanmar;Myanmar;Myanmar;Myanmar;Myanmar;Myanmar;Myanmar;Myanmar;Myanmar
+NAM;na;264;?;?;eu;Namibia;Namibia;Namibia;Namibia;Namibia;Namibië;Namibia;Namibia;Namibia
+NEP;np;977;?;?;eu;Nepal;Nepal;Nepal;Nepal;Nepal;Nepal;Nepal;Nepal;Nepal
+NL;nl;31;00;0;eu;Nederland;Netherlands;Niederlande;Pays-Bas;Paises Bajos;Nederland;Netherlands;Paises Bajos;Alankomaat
+NA;an;599;?;?;eu;Netherlands Antilles;Netherlands Antilles;Niederländische Antillen;Antilles Néderlandais;Antilles Paises Bajos;Nederlandse Antillen;Netherlands Antilles;Antilles Paises Bajos;Alankomaiden Antillit
+NZ;nz;64;?;0;eu;New Zealand;New Zealand;Neuseeland;Nouvelle Zealande;Nueva Zealande;Nieuw Zeeland;New Zealand;Nueva Zealande;Uusi Seelanti
+NIC;ni;505;00;0;eu;Nicaragua;Nicaragua;Nicaragua;Nicaragua;Nicaragua;Nicaragua;Nicaragua;Nicaragua;Nicaragua
+RN;ne;227;?;?;eu;Niger;Niger;Niger;Niger;Niger;Niger;Niger;Niger;Niger
+WAN;ng;234;?;?;eu;Nigeria;Nigeria;Nigeria;Nigeria;Nigeria;Nigeria;Nigeria;Nigeria;Nigeria
+KO;kp;850;?;?;eu;North Korea;North Korea;Nordkorea;Corée du Nord;Corea del Norte;Noord-Korea;North Korea;Corea del Norte;Pohjois-Korea
+YMN;ye;967;?;?;eu;Northern Yemen;Northern Yemen;Nordjemen;Yemen du Nord;Yemen del Norte;Noord-Jemen;Northern Yemen;Yemen del Norte;Pohjois-Jemen
+N;no;47;095;0;eu;Norge;Norway;Norwegen;Norwège;Noruega;Noorwegen;Norway;Noruega;Norja
+OM;om;968;?;?;eu;Oman;Oman;Oman;Oman;Oman;Oman;Oman;Oman;Oman
+PK;pk;92;?;?;eu;Pakistan;Pakistan;Pakistan;Pakistan;Pakistan;Pakistan;Pakistan;Pakistan;Pakistan
+PA;pa;507;00;;eu;Panama;Panama;Panama;Panama;Panama;Panama;Panama;Panama;Panama
+PNG;pg;675;?;?;eu;Papua New Guinea;Papua New Guinea;Papua-Neuguinea;Papua-Nouvelles Guinées;Papua-Nueva Guinea;Papua-Nieuw Guinea;Papua New Guinea;Papua-Nueva Guinea;Papua-Uusi-Guinea
+PY;py;595;?;?;eu;Paraguay;Paraguay;Paraguay;Paraguay;Paraguay;Paraguay;Paraguay;Paraguay;Paraguay
+PE;pe;51;?;?;eu;Peru;Peru;Peru;Péru;Peru;Peru;Peru;Peru;Peru
+RP;ph;63;?;?;eu;Pilipinas;Philippines;Philippinen;Philippines;Filippines;Filippijnen;Philippines;Filippines;Filippiinit
+PL;pl;48;?;0;eu;Polska;Poland;Polen;Pologne;Polonia;Polen;Poland;Polonia;Puola
+P;pt;351;?;?;eu;Portugal;Portugal;Portugal;Portugal;Portugal;Portugal;Portugal;Portugal;Portugali
+PR;pr;1809;011;1;eu;Puerto Rico;Puerto Rico;Puerto Rico;Puerto Rico;Puerto Rico;Puerto Rico;Puerto Rico;Puerto Rico;Puerto Rico
+Q;qa;974;?;?;eu;Qatar;Qatar;Katar;Qatar;Qatar;Qater;Qatar;Qatar;Qatar
+RO;ro;40;?;?;eu;Romania;Romania;Rumänien;Rumanie;Rumania;Roemenië;Romania;Rumania;Romania
+RUS;ru;7;?;?;eu;Russia;Russia;Rußland;Russie;Russia;Rusland;Russia;Russia;Venäjä
+RWA;rw;250;?;?;eu;Rwanda;Rwanda;Ruanda;Rwanda;Rwanda;Rwanda;Rwanda;Rwanda;Ruanda
+Z;;260;?;?;eu;Sambia;Sambia;Sambia;Sambia;Sambia;Zambia;Sambia;Sambia;Sambia
+RSM;sm;378;?;?;eu;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino
+SA;sa;966;?;?;eu;al-Arabiyya as-Saudiyya;Saudi Arabia;Saudi Arabien;Arabie Saudite;Arabia Saudita;Saudi Arabië;Saudi Arabia;Arabia Saudita;Saudi-Arabia
+SN;sn;221;?;?;eu;Senegal;Senegal;Senegal;Sénégal;Senegal;Senegal;Senegal;Senegal;Senegal
+SY;sc;248;?;?;eu;Seychelles;Seychelles;Seychellen;Seychelles;Seychelles;Seychelles;Seychelles;Seychelles;Seychellit
+WAL;sl;232;?;?;eu;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone
+SGP;sg;65;?;?;uk;Singapore;Singapore;Singapur;Singapor;Singapore;Singapore;Singapore;Singapore;Singapore
+SK;sk;42;?;0;eu;Slovensko;Slovakia;Slowakei;République Slowaque;Republica Slowaca;Slowakije;Slovakia;Republica Slowaca;Slovakia
+SLO;si;386;?;?;eu;Slovenija;Slovenia;Slowenien;Slovenie;Slovenia;Slovenië;Slovenia;Slovenia;Slovenia
+SP;so;252;?;?;eu;Somalia;Somalia;Somalia;Somalie;Somalia;Solmalië;Somalia;Somalia;Somalia
+ZA;za;27;09;0;uk;Suid-Afrika;South Africa;Südafrika;Afrique du Sud;Africa del Sur;Zuid-Afrika;South Africa;Africa del Sur;Etelä-Afrikka
+ROK;kr;82;?;?;uk;South Korea;South Korea;Südkorea;Corée du Sud;Corea del Sur;Zuid-Korea;South Korea;Corea del Sur;Etelä-Korea
+E;es;34;07;9;eu;España;Spain;Spanien;Espagne;España;Spanje;Spain;España;Espanja
+CL;lk;94;?;?;eu;Sri Lanka;Sri Lanka;Sri Lanka;Sri Lanka;Sri Lanka;Sri Lanka;Sri Lanka;Sri Lanka;Sri Lanka
+WL;lc;1809;011;1;eu;St. Lucia;St. Lucia;St. Lucia;St. Lucia;St. Lucia;St. Lucia;St. Lucia;St. Lucia;Saint Lucia
+WV;vc;1809;011;1;eu;St. Vincent;St. Vincent;St. Vincent;St. Vincent;St. Vincent;St. Vincent;St. Vincent;St. Vincent;Saint Vincent
+SUD;sd;249;?;?;eu;Sudan;Sudan;Sudan;Sudan;Sudan;Soedan;Sudan;Sudan;Sudan
+SME;sr;597;?;?;eu;Suriname;Suriname;Surinam;Suriname;Suriname;Suriname;Suriname;Suriname;Suriname
+SD;sz;268;?;?;eu;naNgwane;Swaziland;Swasiland;Swasiland;Swasiland;Swaziland;Swaziland;Swasiland;Swazimaa
+S;se;46;009;0;eu;Sweden;Sweden;Schweden;Suède;Suecia;Zweden;Sweden;Suecia;Ruotsi
+CH;ch;41;00;0;eu;Switzerland;Switzerland;Schweiz;Suisse;Suiza;Zwitserland;Switzerland;Suiza;Sveitsi
+SYR;sy;963;?;?;eu;as-Suriyya;Syria;Syrien;Syrie;Siria;Syrië;Syria;Siria;Syyria
+TJ;tj;7;?;?;eu;Toçikiston;Tajikistan;Tadschikistan;Tajikistan;Tajikistan;Tadzjikistan;Tajikistan;Tajikistan;Tajikistan
+RC;tw;886;?;?;eu;Taiwan;Taiwan;Taiwan;Taiwan;Taiwan;Taiwan;Taiwan;Taiwan;Taiwan
+EAT;tz;255;?;?;eu;Tanzania;Tanzania;Tansania;Tansania;Tansania;Tanzania;Tanzania;Tansania;Tansania
+THA;th;66;?;?;eu;Thailand;Thailand;Thailand;Thailande;Thailande;Thailand;Thailand;Thailande;Thaimaa
+RT;tg;228;?;?;eu;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Togo
+TT;tt;1809;011;1;eu;Trinidad & Tobago;Trinidad & Tobago;Trinidad & Tobago;Trinidad & Tobago;Trinidad & Tobago;Trinidad & Tobago;Trinidad & Tobago;Trinidad & Tobago;Trinidad ja Tobago
+TN;tn;216;?;?;eu;Tunis;Tunesia;Tunesien;Tunesie;Tunicia;Tunesië;Tunesia;Tunicia;Tunisia
+TR;tr;90;00;0;eu;Türkiye;Turkey;Türkei;Turkie;Turkia;Turkije;Turkey;Turkia;Turkki
+TM;tm;7;?;?;eu;Turkmenistan;Turkmenistan;Turkmenistan;Turkmenistan;Turkmenistan;Turkmenistan;Turkmenistan;Turkmenistan;Turkmenistan
+USA;us;1;011;1;us;USA;USA;USA;USA;USA;VS;USA;USA;USA
+EAU;ug;256;?;?;eu;Uganda;Uganda;Uganda;Uganda;Uganda;Oeganda;Uganda;Uganda;Uganda
+UA;ua;7;?;?;eu;Ukraïna;Ukraine;Ukraine;Ukraine;Ukraine;Oekraïne;Ukraine;Ukraine;Ukraina
+UAE;ae;971;?;?;eu;United Arab Emirates;United Arab Emirates;Vereinigte Arabische Emirate;Emirats Arabien Unies;Emirates Arabias Unidos;Vereningde Arabische Emiraten;United Arab Emirates;Emirates Arabias Unidos;Arabiemiirikunnat
+ROU;uy;598;?;?;eu;Uruguay;Uruguay;Uruguay;Uruguay;Uruguay;Uruguay;Uruguay;Uruguay;Uruguay
+UZB;uz;7;?;?;eu;Uzbekiston;Uzbekistan;Usbekistan;Uzbekistan;Uzbekistan;Oezbekistan;Uzbekistan;Uzbekistan;Uzbekistan
+V;va;396;?;?;eu;Città del Vaticano;Vatican City;Vatikanstadt;Ville du Vatikan;Ville du Vatikan;Vaticaanstad;Vatican City;Ville du Vatikan;Vatikaani
+YV;ve;58;?;0;eu;Venezuela;Venezuela;Venezuela;Vénézuela;Venezuela;Venezuela;Venezuela;Venezuela;Venezuela
+VN;vn;84;?;?;eu;Viêt-Nam;Vietnam;Vietnam;Vietnam;Vietnam;Vietnam;Vietnam;Vietnam;Vietnam
+WS;ws;685;?;?;eu;Western Samoa;Western Samoa;Westsamoa;Ouestsamoa;Ouestsamoa;West-Samoa;Western Samoa;Ouestsamoa;Länsi-Samoa
+YE;ye;967;?;?;eu;al-Yaman;Yemen;Jemen;Yemen;Yemen;Jemen;Yemen;Yemen;Jemen
+YU;yu;381;?;?;eu;Jugoslavija (Srbija & Crna Gora);Yugoslavia (Serbia & Montenegro);Jugoslawien (Serbien & Montenegro);Yugoslavie (Serbie & Montenegro);Yugoslavia (Serbia & Montenegro);Joegoslavië (Servië & Montenegro);Yugoslavia (Serbia & Montenegro);Yugoslavia (Serbia & Montenegro);Jugoslavia (Serbia ja Montenegro)
+ZRE;za;243;?;?;eu;Zaïre;Zaire;Zaire;Zaïre;Zaïre;Zaïre;Zaire;Zaïre;Zaire
+ZW;zw;263;?;?;eu;Zimbabwe;Zimbabwe;Zimbabwe;Zimbabwe;Zimbabwe;Zimbabwe;Zimbabwe;Zimbabwe;Zimbabwe
+none;xx;;;;eu;;;;;;;;;

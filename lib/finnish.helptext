@@ -1,0 +1,88 @@
+Received: from SpoolDir by DANET (Mercury 1.21); 16 Jun 97 08:32:52 GMT+1
+Return-path: <karvonen@dawn.joensuu.fi>
+Received: from webserver.danet.de by mailhost.mu.danet.de (Mercury 1.21);
+    16 Jun 97 08:32:43 GMT+1
+Received: from dawn.joensuu.fi ([193.167.41.4]) by webserver.danet.de
+          (Netscape Mail Server v1.1) with SMTP id AAA14204
+          for <durka@danet.de>; Fri, 13 Jun 1997 14:26:17 +0200
+Received: (from karvonen@localhost) by dawn.joensuu.fi (8.6.12/8.6.12) id PAA22356 for durka@danet.de; Fri, 13 Jun 1997 15:27:29 +0300
+From: Jarmo Karvonen <karvonen@dawn.joensuu.fi>
+Message-Id: <199706131227.PAA22356@dawn.joensuu.fi>
+Subject: finnish.helptext
+To: durka@danet.de
+Date: Fri, 13 Jun 97 15:27:28 EET DST
+X-Mailer: ELM [version 2.3 PL11]
+
+# Help Texts displayed
+#
+# finnish version, by Jarmo Karvonen 11.6.1997
+#
+set helpTopics(context) {Valitettavasti tämä sovellus ei sisällä aihekohtaisia ohjeita, kuitenkin saman toiminnon saat aikaiseksi painamalla F1 kun hiiri osoittaa haluamaasi kohtaa. Tämän voit tehdä milloin vain.}
+set helpTopics(help) {Tämä sovellus tarjoaa hyvin suppean ohjeiston, jonka on kääntänyt Jarmo Karvonen mukaellen englannista. Käännöksessä on pyritty Windowsmaisiin sanavalintoihin. Joidenkin kohtien puuttuvia ohjeita on lisätty.}
+set helpTopics(window) {Tämä on osoitekirja sovellus.}
+set helpTopics(keys) "Seuraavat toimintanäppäimet on määritelty sovelluksessa (ja lisäksi ne jotka toimivat muutenkin ikkunoissa):\nCtrl+C:\t\t$mes(clear)\nCtrl+A:\t\t$mes(add)\nCtrl+U:\t\t$mes(update)\nCtrl+S:\t\t$mes(search)\nCtrl+G\t\t$mes(view)\nCt
+l+X:\t\t$mes(exit)\nCtrl+P\t\t$mes(print)\nSivu ylös\tSeuraava osoite\nSivu alas\tSeuraava osoite\nEnter\t\tSeuraava rivi"
+set helpTopics(.f.menu) {Ei mitään täällä.}
+set helpTopics(.f.menu.space) {Ei mitään täällä.}
+set helpTopics(.f.menu.file) {Tämä on tiedosto valikko.  It can be used to invoke some overall operations on the addressbook application, such as loading a file or exiting.}
+set helpTopics(.f.menu.edit) {Tämä on muokkaa valikko. Voit tyhjentää kentän, lisätä, muuttaa osoitteita ja etsiä}
+set helpTopics(.f.menu.goto) {Tämä on mene valikko. Voit käyttää näitä samoja komentoja myös valintaikkunassa.}
+set helpTopics(.f.menu.options) {Tämä on Asetukset valikko. Sitä käytetään joidenkin asetusten muuttamiseen kuten hakuasetusten, kansallisuuden ja tiedostojen asetusten}
+set helpTopics(.f.menu.countries) {Tämä on Maat valikko. Täältä voit etsiä maakoodin.}
+set helpTopics(.f.menu.help) {Tämä on "help" valikko. Mitäpä muuta.}
+set helpTopics(.f.main.entry.0.entry) \
+"Näihin osoitekirjan kenttiin tulisi kirjoittaa seuraavan tyyppistä\
+tietoa.\nTässä on jotain esimerkkiä siitä miten ne tulisi tallentaa:\n\n\
+addon\t\tJotakin joka ei koske katuosoitetta.\n\
+street\t\tKadunnimi, talonnumero, rappu kuten tavallisessa osoitteessa \n\
+country\tKirjoita suoraan maan koodi tai valitse Maat-valikosta.\n\
+\t\tTunnukset saat valitsemalla Maat-valikosta.\n\
+zip\t\tPostinumero ja Usassa sisältää osavaltion.\n\
+state\t\tNiille, jotka ei laita osavaltiota postinumeroon.\n\
+city\t\tKaupungin nimi\n\
+birthday\tSyntymäpäivä muoto esim: dd.mm.yyyy\n\
+\t\tJoskus tehdään 'syntymäpäivä muistuttaja' seuraaviin versioihin\n\
+phone*\t\tPuhelinumero, soitettaessa kansainväliset numerot\n\
+\t\tlisätään automaattisesti, jos vain asetukset\n\
+\t\ttiedostossa addressbook.config on oikein.\n\
+\t\t1-234-567-7890\t(USA ja Kanada)\n\
+\t\t(089)1234567\t(Saksa ja moni muu)\n\
+\t\t12345678\t(Tanska ja Ranska ei Pariisi)\n\
+\t\t(1)44556677\t(Ranskassa Pariisin liepeillä)\n\
+email\t\tKoko sähköpostiosoite\n\
+www\t\tKotisivu sisältäen http://"
+set helpTopics(.f) {Ei mitään täällä.}
+set helpTopics(.f.main) {Ei mitään täällä.}
+set helpTopics(.f.main.entry) {Ei mitään täällä.}
+set helpTopics(.f.main.list) {Ei mitään täällä.}
+set helpTopics(.f.main.list.title) {Paina tästä ja niin näet :-)}
+set helpTopics(.f.main.list.lb.box) {Valintalista näyttää henkilöiden nimet. Valitse hiirellä henkilö nähdäksesi tiedot.}
+set helpTopics(.f.main.list.lb.scroll) {Vierityspalkilla voidaan siirtyä valintaikkunassa haluttuun kohtaan.}
+set helpTopics(.f.main.list.status.0) {Näyttää tietoja osoiterekisterin tapahtumista.}
+set helpTopics(.f.main.list.status.1) {Näyttää tietoja osoiterekisterin osoitteiden määrästä}
+set helpTopics(.f.main.list.status.2) {Näyttää tietoja missä tietueessa osoitteistossa ollaan menossa.}
+set helpTopics(.f.main.list.status.3.0) {Siirtyy valintaikkunassa (siirtyy alkuun)}
+set helpTopics(.f.main.list.status.3.1) {Siirtyy valintaikkunassa (siirtyy 10 taaksepäin)}
+set helpTopics(.f.main.list.status.3.2) {Siirtyy valintaikkunassa (siirtyy yhden taaksepäin)}
+set helpTopics(.f.main.list.status.3.3) {Siirtyy valintaikkunassa (siirtyy yhden eteenpäin)}
+set helpTopics(.f.main.list.status.3.4) {Siirtyy valintaikkunassa (siirtyy 10 eteenpäin)}
+set helpTopics(.f.main.list.status.3.5) {Siirtyy valintaikkunassa (siirtyy loppuun)}
+set helpTopics(.f.main.list.status.4.b) {Siirtyy nopeasti valintaikkunassa (tyhjennä kenttä ja kirjoita nimestä alkukirjamen)}
+set helpTopics(.f.main.list.status.4.e) {Siirtyy nopeasti valintaikkunassa (tyhjennä kenttä ja kirjoita nimestä alkukirjamen)}
+set helpTopics(.f.main.abc) {Ei mitään täällä.}
+set helpTopics(.f.main.abc.0) {Siirtyy nopeasti valintaikkunassa valitulla kirjaimella alkavan nimen kohdalle. Asetuksista voi valita koskeeko tämä etu vai sukunimeä.}
+set helpTopics(.f.main.abc.space) {Ei mitään täällä.}
+set helpTopics(.f.main.abc.mail) {Antaa täyden osoitteen (Riippuen asetuksista meneekö osoite näytölle (stdout) vai valitulle ohjelmalle)}
+set helpTopics(.f.main.abc.phonepriv) {Antaa oman puhelinumeron (Riippuen asetuksista meneekö numero näytölle (stdout) vai ohjelmalle, joka valitsee numeron suoraan)}
+set helpTopics(.f.main.abc.phonework) {Antaa työnumeron (Riippuen asetuksista meneekö numero näytölle (stdout) vai ohjelmalle, joka valitsee numeron suoraan)}
+set helpTopics(.f.main.abc.phone) {Antaa puhelinnumeron (Riippuen asetuksista meneekö numero näytölle (stdout) vai ohjelmalle, joka soittaa numeroon)}
+set helpTopics(.f.main.abc.fax) {Antaa faxnumeron (Riippuen asetuksista meneekö numero näytölle (stdout) vai ohjelmalle joka faxaa)}
+set helpTopics(.f.main.abc.email) {Antaa sähköpostiosoitteen (Riippuen asetuksista joko näytölle (stdout) tai sähköpostiohjelmalle)}
+set helpTopics(.f.buttons) {Ei mitään täällä.}
+set helpTopics(.f.buttons.undo) {Kumoaa juuri tehdyt muutokset.}
+set helpTopics(.f.buttons.clear) {Tyhjentää kentät.}
+set helpTopics(.f.buttons.delete) {Poistaa osoitteen (tietueen).}
+set helpTopics(.f.buttons.add) {Lisää tietueen.}
+set helpTopics(.f.buttons.change) {Muuttaa tietueen.}
+set helpTopics(.f.buttons.search) {Suorittaa etsinnän.}
+set helpTopics(.f.buttons.auswahl) {Näyttää kaikki osoitteet valintalistassa.}

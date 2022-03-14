@@ -1,0 +1,4 @@
+#!/bin/sh
+MYPATH=`pwd`
+wish -f $MYPATH/bin/addressbook -ld $MYPATH/lib -a $MYPATH/lib/addresses.dat
+

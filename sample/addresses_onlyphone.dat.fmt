@@ -1,0 +1,41 @@
+#
+# Configuration File for the Data-File
+#
+# Define for each field the contents. You can use predefined contents types
+# which will generate a label in your language and which may perform some
+# predefined action (like phone, fax, email)
+# Or you use 'other', than you have to define you own label
+# A list of all possiblities follows at the end.
+# Begin with 0
+
+0 firstname
+1 lastname
+2 phonepriv
+3 phonework
+4 fax
+5 other1
+6 other2
+
+label1 "Last time he called"
+label2 "Last time I called"
+
+#########################################################################
+# The caracter separing your datafields                                 #
+
+separatorchar ;
+
+#########################################################################
+# Format for the entries in the listbox
+# usually "%s, %s" if you display lastname, firstname
+# and     "%s %s"  if you display firstname, lastname
+listboxformat "%s %s"
+
+#########################################################################
+# The number of the first and second field displayed in the listbox
+listboxentry1 0
+listboxentry2 1
+
+#########################################################################
+# The number of the first and second field used for sorting
+sort1 1
+sort2 0

@@ -1,0 +1,28 @@
+These are things which are left to do.
+Any help is appreciated. I'll probably continue to develop, but
+I don't know, how much time I can spend for it.
+
+Short term:
+
+File -> Lock and File -> Unlock
+Choose locking state when loading a file
+Modification date which gets updated automatically
+Ctrl+M doesn't work but I couldn't find the problem
+Check for 'dead' lockfile on startup
+
+Long term:
+
+Printing ... 
+ - printing of addresslists
+ - printing of only special fields
+ - printing of enveloppes
+ - printing directly in postscript wish the canvas widget
+   (started but not finished)
+Translation to spanish, italian, swedish, norwegian or whatever
+Possibility to send email to all people of a selection
+International sorting including german umlauts and french accents
+More user definable buttons
+Types for the entryfields to allow several dateformats, more than one
+  line entries and pictures
+Editor for the formatfile to change fields and adjust data in it
+Change in the user interface to avoid confusion with the clear button

@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+<TITLE>Addressbook Installation</TITLE>
+</HEAD>
+<BODY BGCOLOR=#ffe4c4>
+
+<H5 align="center">
+   <A HREF="./">Index</A>
+ | <A HREF="install.html">Install</A>
+ | <A HREF="manual.html">Manual</A>
+ | <A HREF="screenshot.html">Screenshot</A>
+ | <A HREF="changes.html">Changes</A>
+</H5>
+<p>
+<H1 align="center">Addressbook - Install</H1>
+<HR>
+1. Requirements
+<p>
+To install Addressbook, you need:
+<p>
+<LI> A Computer
+<LI> Tcl/Tk installed (tk3.6 or tk4.0 or newer)
+<LI> The file addressbook-[version].tar.gz
+<p>
+2. Unpacking
+<p>
+Unpack the file addressbook-[version].tar.gz in your favorite place
+<pre>
+gzip -cd addressbook-[version].tar.gz | tar xvf -
+</pre>
+3. Testing
+<p>
+If you want to test it before installing, just invoke './test_addressbook'
+and play with it.
+<p>
+4. Installing
+<p>
+4.1 Installation script
+<p>
+I have provided an installation script written in tcl. You just have
+to invoke './install_addressbook' and answer the questions. If you 
+want to install it as root, you have to be root while installing. 
+If anything goes wrong, try to create the directories (for the binaries 
+and the libdir) before starting the script. If nothing helps, you can 
+always continue manually.
+<p>
+4.2 Manual Installation
+<p>
+You dont need this, if the install script finished without errors. Just
+if you have problems with the automatic installation, read on.
+<p>
+You have to find out the location of the program 'wish' or 'wish4.0', 
+the Tcl/Tk interpreter. Type something like 'where wish' or 'type wish'
+or 'type wish4.0' to get the full path to it.
+<p>
+Replace (using your favorite editor) the first line of the file
+bin/addressbook if the path to wish on your system differs.
+<p>
+Copy all the files in bin to /usr/local/bin, installing as root (or
+to ~/bin, installing as user)
+<pre>
+cp -d bin/* /usr/local/bin
+</pre>
+Make a directory /usr/local/lib/addressbook (or ~/addressbook)
+if you choose an other place, modify the variable 'configfile' in
+addressbook (about line 4)
+<p>
+Copy all the files in lib (incl. subdirs) to /usr/local/lib/addressbook
+<pre>
+cp -dR lib/* /usr/local/lib/addressbook
+</pre>
+Edit (using your favorite editor) the file 
+/usr/local/lib/addressbook/addressbook.config to meet your local needs.
+<p>
+4.3. The little programs tel fax and email
+<p>
+These programs are written in perl and they are standalone programs to
+get the telephone number in a fast way. They get installed by the
+installation program.
+<p>
+5. Using
+<p>
+To use, just call addressbook. You will get the default addressfile.
+If you want to create your own file, copy the formatfile from the
+default addressfile (/usr/local/lib/addressbook/addresses.dat.fmt)
+and modify it.
+<p>
+Note: Each data file needs a format file with the same name plus
+the extension .fmt
+<p>
+If you allow users to modify the global addressfile, you have to give
+them write access to the file. If not, every user should have a file
+.addressbook.config in his homedirectory pointing to his addressfile.
+<p>
+With the file ~/.addressbook.config you can override the defaults.
+<p>
+It is very handy to have a adrfile1 and adrfile2 defined in the global
+or privat config file, than you can switch easily between these two files
+for example for the global and personal addressbookfile.
+<p>
+For the little programs, just invoke tel, email or fax with the name, 
+you want to search as an argument.
+<p>
+6. Registration
+<p>
+Don't be shocked, the program is published under the GNU Public
+Licence (see COPYING). However, if you like the program and you 
+use it regularly, it would be nice, if you would send me a short
+email, where you write what you like, what suggestions you have,
+how you were informed about the existence of this program,
+how many users use it and if you want to be notified, if a new 
+version comes out. This registration doesn't cost anything, I 
+will not use your email address for any purpose, unless you want to
+be notified of new versions. This registration helps me to track down 
+the number of people who use it, the problems and the important
+things who need to be developed more.
+<p>
+Use may use a form like this which you can find in the addressbook
+libdir as REGISTRATION and send it to the following address:
+<p>
+<A HREF="mailto:clemens@dagobah.de?subject=addressbook registration">clemens@dagobah.de</A>
+<pre>
+Subject: Addressbook Registration
+
+The brand of my computer is           :
+Prozessor is a                        :
+Version and Name of operating system  :
+Version of tk used (3.6, 4.0 or ... ) :
+Version of addressbook                :
+No. of people who use it approx.      :
+The size of my database is approx.    :
+I heard about this program from       :
+I got the source from                 :
+I installed as (root/user)            :
+I like it, because                    :
+I don't like                          :
+I use it at home / at work            :
+The function I use most               :
+The feature I miss most               :
+I want to be notified of new versions :
+For futur versions, I would need
+ Export/Import from these formats     :
+ Which kind of printing               :
+Comments                              :
+</pre>
+<p>
+7. Problems
+<p>
+If you have problems, please contact the me at
+As I'm continuing the development, I welcome any questions, comments, 
+suggestions, complaints, assistance, money, CDROMs and virtual beer.
+<p>
+Email:
+<A HREF="mailto:clemens@dagobah.de?subject=addressbook">clemens@dagobah.de</A>
+subject should begin with "addressbook".
+<HR>
+<ADDRESS>
+<A HREF="http://home.pages.de/~clemens/">
+<EM>Clemens Durka</EM></A>, 02.11.1997
+</ADDRESS>
+</BODY>
+</HTML>

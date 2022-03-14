@@ -1,0 +1,69 @@
+# These are the predefined fields:
+#########################################################################
+# Predefined are these (with translation depending on languagesetting)
+# you have to define them in lowercase english, but output will be in 
+# local language. No Field is a must. 
+#
+# Field-ID		german transl.		french transl.
+#
+# mrmrs			Anrede			M/Mme/Mlle
+# title			Titel			Titre
+# name			Name			Nom
+# firstname		Vorname			Prenom
+# middlename		Mittelname		Nom de milieu
+# lastname		Nachname		Nom
+# maidenname            Maedchenname            Nom de jeune fille
+# company		Firma			Entreprise
+# institute		Einrichtung		Institut
+# department		Abteilung		Departement
+# addon			Zusatz			Supplement
+# pobox			Postfach		B.P.
+# street		Strasse			Rue
+# country		Land			Pays
+# zip			PLZ			Code postal
+# city			Ort			Ville
+# state			Staat			Etat
+# province		Provinz			Departement
+# county		Bezirk			Arrondissement
+# birthday		Geburtstag		Date de naissance
+# phone			Telefon			Telephone
+# phone2		Telefon 2		Telephone 2
+# phonepriv		Telefon privat		Telephone prive
+# phonepriv2		Telefon privat 2	Telephone prive 2
+# phonework		Telefon Arbeit		Telephone bureau 
+# phonework2		Telefon Arbeit 2	Telephone bureau 2
+# phonesecretary	Telefon Sekretariat	Telephone secretariat
+# phoneoffice           Telefon Buero           Telephone bureau
+# phonemobile		Funktelefon		Telephone mobile
+# phonepager		Cityruf/Scall		Pager
+# fax			Fax			Telefax
+# faxpriv		Fax privat		Telefax prive
+# faxwork		Fax Arbeit		Telefax bureau
+# faxsecretary		Fax Sekretariat		Telefax secretariat
+# faxmobile		Mobiles Fax 		Telefax mobile
+# email			E-Mail			E-Mail
+# email2		E-Mail 2		E-Mail 2
+# www			WWW-Homepage		Page WWW
+# category		Kategorie		Categorie
+# remark		Bemerkung		Remarque
+# knowsince		Bekannt seit		Connu depuis	
+# lastcontact		letzter Kontakt		dernier contacte
+# lastchange		letzte Aenderung	dernier changement
+# alias			Alias			Alias
+# id			ID			ID
+# nr			Nr.			No.
+# other1		zu definieren		a definer
+# other2		zu definieren		a definer
+# other3		zu definieren		a definer
+# other4		zu definieren		a definer
+# other5		zu definieren		a definer
+# other6		zu definieren		a definer
+# other7		zu definieren		a definer
+# other8		zu definieren		a definer
+# other9		zu definieren		a definer
+#
+# Please supply a labels of other1 - 9 in this file, if you use it
+# Like this:
+# label1	"Last Mail"
+# label2	"Know him since"
+

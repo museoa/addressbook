@@ -1,0 +1,113 @@
+<pre>
+
+Nov 02 1997: public release 0.7
+
+Aug 22 1997: minor public release 0.6.2
+
+- updated country database (some phonecodes have changed)
+- finnish translation (thanks to Jarmo Karvonen <karvonen@dawn.joensuu.fi>)
+- swedish translation (thanks to Peter Antman)
+- italian translation (thanks to Andrea Borgia <borgia@cs.unibo.it>)
+
+May 02 1996: minor public release 0.6.1
+
+- mktable program contributed by Martin Paul for better
+  printing (in the contrib directory)
+- updated manual
+- new searchmode caseinsensitive regexp
+- bugfix selection in listbox
+- fonts and color configurable
+- start as icon with -iconic
+- iconbitmap added
+- texconvert: _ to \_ and ^ to \^
+- option for not showing the ABC and action buttons
+
+Mar 22 1996: public release 0.6
+
+- bugfix in global preferences
+
+Mar 17 1996: test release 0.5.8
+
+- documentation now in HTML and in ASCII
+- bugfixes in address.perl
+- bugfixes with file locking
+
+Mar 12 1996: test release 0.5.7
+
+- file locking: only the first person gets write access
+  (related options: lockbydefault, nolocking)
+- added debuggingoutput (call with -debug 'level'; 1 <= level <= 4)
+- printing with canvas works a little bit
+- state field for US users (see sample/addresses_usa.dat)
+- added a second command line program written in awk. This is not
+  installed by default, but are welcome to try it.
+
+Feb 02 1996: test release 0.5.6
+
+Changes from 0.5.5 to 0.5.6
+
+- export works
+- included dutch translation (thanks to Andre Koster <scott@luna.nl>)
+- beginning of printing with a canvas (doesn't work yet)
+
+Jan 24 1996: internal release 0.5.5
+
+Changes from 0.5.4 to 0.5.5
+
+- little better printing (use of mpage instead of a2ps for postscript)
+- latex user defined printing
+  (to use it, define the variables userhead and usertail with the latex
+  code which comes before and after the addresses in your configfile)  
+- export addresses
+- new countries added in countrydatabase 
+- saving of global preferences
+
+Dec 11 1995: test release 0.5.4
+
+Changes from 0.5.3 to 0.5.4
+
+- bugfixes
+
+Nov 29 1995: internal release 0.5.3
+
+Changes from 0.5 to 0.5.3:
+
+- selection after a search remains there. You can select and unselect
+  entries by doubleclick. Will be used for printing.
+- confirmwindow on each operation is configurable
+  (configoption: confirm, confirmdelete)
+- undo button to undo the last add delete or update operation
+- sorting is independant from the listboxentries
+  (in the .fmt file: listboxentry1 / 2  and sort1 / 2)
+  if the sort is omitted, the listboxentry becomes sortingcriteria
+- added www button, if you use www field
+- fast loading of up to 3 addressfiles. You have to define in your 
+  configfile adrfile1 / 2 / 3 for the filename of the database and 
+  adrfile1alias (and 2, 3) for a name that appears in the menu.
+- many new predefined fieldnames (see samples/addresses_overload.dat)
+- every predefined fieldname can be doubled (street -> street2)
+- support for more languages (probably dutch, spanish 
+  if the translators help me)
+- reordered countrydatabasefile to support more languages and added
+  a field for the ISO countrycode for future use.
+- bugfix in fileselectionbox for loading
+- completely bilingual for use with tk4.0 or tk3.6
+- bindings conform to tk4.0
+- cut & paste works for tk3.6 again
+- contrib directory and a simple birthday reminder in it.
+  
+May 28 1995: public release of addressbook-0.5
+
+Changes from 0.4 to 0.5:
+
+- many bugfixes
+- some support for printing lists
+- support for tcl7.4/tk4.0
+- deleting addresses is possible
+- little test and installationscript
+- user defined fields
+- much more, I don't remember any more :-)
+
+Apr 03 1995: public release of addressbook-0.4 (first public release)
+
+</pre>

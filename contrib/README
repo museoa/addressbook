@@ -1,0 +1,17 @@
+In this directory there is contributed software which works
+together with the addressbook programm. These programms don't
+get installed automatically, for the moment.
+
+If you have some software, which belongs here, please contact me.
+
+Clemens Durka (durka@informatik.tu-muenchen.de)
+
+
+Index:
+
+(for the moment it is quite empty...)
+
+birthday        a birthday reminder script (small and simple)
+conv		a very simple converter to add a new field in a databasefile
+mktable		a program contributed by Martin Paul for better printing.
+		Documentation is found inside the directory

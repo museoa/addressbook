@@ -1,0 +1,76 @@
+# Help Texts displayed
+#
+# english version
+#
+set helpTopics(context) {Leider unterstützt dieses Programm keine normale kontextsensitive Hilfe. Aber durch Drücken der F1 Taste kann man jederzeit Informationen zu dem Punkt bekommen, über dem der Mauszeiger steht.}
+set helpTopics(help) {Tja, leider hatte ich noch nicht viel Zeit, ausführliche Hilfefunktionen zu schreiben. Durch Drücken von F1 über einer Fläche kann man etwas Hilfe bekommen.}
+set helpTopics(window) {Dies ist ein Adreßbuchprogramm.}
+set helpTopics(keys) "Folgende Tasten beschleunigen die Eingabe:\nCtrl+C:\t\t$mes(clear)\nCtrl+A:\t\t$mes(add)\nCtrl+U:\t\t$mes(update)\nCtrl+S:\t\t$mes(search)\nCtrl+G\t\t$mes(view)\nCtrl+X:\t\t$mes(exit)\nCtrl+P\t\t$mes(print)\nBild auf\tVorherige Adresse\nBild ab\t\tFolgende Adresse\nEnter\t\tNächste Eingabezeile"
+set helpTopics(.f.menu) {Hier gibt es nichts zu tun.}
+set helpTopics(.f.menu.space) {Hier gibt es nichts zu tun.}
+set helpTopics(.f.menu.file) {Datei-Menü: Hier kann man Operationen zu Dateien wie laden und speichern und drucken veranlassen.}
+set helpTopics(.f.menu.edit) {Edit-Menü: Hier kann man das Feld löschen, Einträge ändern oder hinzufügen und suchen.}
+set helpTopics(.f.menu.goto) {Gehezu-Menü: Hier kann man wie mit den Buttons unter der Listbox sich in der Listbox bewegen.}
+set helpTopics(.f.menu.options) {Optionen-Menü: Hier können einige Optionen geändert werden.}
+set helpTopics(.f.menu.countries) {Länder-Menü: Hier können die Landeskennzeichen nachgeschaut werden.}
+set helpTopics(.f.menu.help) {Hilfe-Menü, leicht ersichtlich.}
+set helpTopics(.f.main.entry.0.entry) \
+"In diese Felder des Adreßbuches sollten die entsprechenden\n\
+Daten eingetragen werden.\n\
+Einige Beispiele, wie Daten eingegeben werden sollten:\n\n\
+Zusatz\t\tetwas wie 'c/o' oder 'bei', was nicht zur Straße gehört\n\
+Straße\t\tso wie im jeweiligen Land üblich, erst Straße dann Nummer\n\
+\t\toder erst Nummer, dann Straße (wie in Frankreich)\n\
+Land\t\tBitte Landeskürzel wie auf Autokennzeichen verwenden.\n\
+\t\tUnter Länder steht eine Liste zur Verfügung.\n\
+\t\tDie vollen Ländernamen erscheinen dann automatisch.\n\
+PLZ\t\tPostleitzahl (incl. Staat für USA or Buchstaben für NL)\n\
+Stadt\t\tName der Stadt ohne Postleitzahl\n\
+Geburtstag\tBeliebig, aber konsequent. Am besten dd.mm.yyyy, da \n\
+\t\tvielleicht noch ein Geburtstagserinnerungsprogramm kommt.\n\
+Telefon*\tWICHTIG: Nummern so eingeben, als ob man sich schon im\n\
+\t\tentsprechenden Land befindet, die internationale Vorwahl wird\n\
+\t\tautomatisch hinzugefügt wenn die Einstellungen in\n\
+\t\t'addressbook.config' korrekt sind.\n\
+\t\t1-234-567-7890\t(USA & Canada)\n\
+\t\t(089)1234567\t(Deutschland und viele andere)\n\
+\t\t12345678\t(Dänemark und Frankreich außer Paris)\n\
+\t\t(1)44556677\t(Frankreich um Paris)\n\
+Email\t\tVolle Emailadresse\n\
+WWW\t\tUrl der Homepage (mit http://)"
+set helpTopics(.f) {Hier ist nichts zu tun.}
+set helpTopics(.f.main) {Hier ist nichts zu tun.}
+set helpTopics(.f.main.entry) {Hier ist nichts zu tun.}
+set helpTopics(.f.main.list) {Hier ist nichts zu tun.}
+set helpTopics(.f.main.list.title) {Überraschung :-)}
+set helpTopics(.f.main.list.lb.box) {Listbox, die die Namen anzeigt. Auf Mausdruck erscheint die volle Adresse.}
+set helpTopics(.f.main.list.lb.scroll) {Scrollbar um die Listbox zu bewegen.}
+set helpTopics(.f.main.list.status.0) {Zeigt Statusinformation}
+set helpTopics(.f.main.list.status.1) {Zeigt Statusinformation}
+set helpTopics(.f.main.list.status.2) {Zeigt Statusinformation}
+set helpTopics(.f.main.list.status.3.0) {Bewegung innerhalb der Listbox (zum Anfang)}
+set helpTopics(.f.main.list.status.3.1) {Bewegung innerhalb der Listbox (zehn zurück)}
+set helpTopics(.f.main.list.status.3.2) {Bewegung innerhalb der Listbox (eins zurück}
+set helpTopics(.f.main.list.status.3.3) {Bewegung innerhalb der Listbox (eins vorwärts)}
+set helpTopics(.f.main.list.status.3.4) {Bewegung innerhalb der Listbox (zehn vorwärts)}
+set helpTopics(.f.main.list.status.3.5) {Bewegung innerhalb der Listbox (zum Ende)}
+set helpTopics(.f.main.list.status.4.b) {Direkter Sprung in der Listbox}
+set helpTopics(.f.main.list.status.4.e) {Direkter Sprung in der Listbox}
+set helpTopics(.f.main.abc) {Hier ist nichts zu tun.}
+set helpTopics(.f.main.abc.0) {Direkter Sprung zum angewählten Buchstaben}
+set helpTopics(.f.main.abc.space) {Hier ist nichts zu tun.}
+set helpTopics(.f.main.abc.mail) {Ausgabe der vollen Adresse (abhängig von der Option 'Ausgabe auf stdout' auf stdout oder an ein Programm))}
+set helpTopics(.f.main.abc.phonepriv) {Ausgabe der Privatnummer (abhängig von der Option 'Ausgabe auf stdout' auf stdout oder an ein Wählprogramm)}
+set helpTopics(.f.main.abc.phonework) {Ausgabe der Arbeitsnummer (abhängig von der Option 'Ausgabe auf stdout' auf stdout oder an ein Wählprogramm)}
+set helpTopics(.f.main.abc.phone) {Ausgabe der Telefonnummer (abhängig von der Option 'Ausgabe auf stdout' auf stdout oder an ein Wählprogramm))}
+set helpTopics(.f.main.abc.fax) {Ausgabe der Faxnummer (abhängig von der Option 'Ausgabe auf stdout' auf stdout oder an ein Faxprogramm)}
+set helpTopics(.f.main.abc.email) {Ausgabe der Emailadresse (abhängig von der Option 'Ausgabe auf stdout' auf stdout oder an ein Mailprogramm)}
+set helpTopics(.f.buttons) {Hier ist nichts zu tun.}
+set helpTopics(.f.buttons.clear) {Das Eintragsfeld leeren.}
+set helpTopics(.f.buttons.add) {Neuen Eintrag hinzufügen.}
+set helpTopics(.f.buttons.change) {Bestehenden Eintrag verändern.}
+set helpTopics(.f.buttons.search) {Suche starten.}
+set helpTopics(.f.buttons.auswahl) {Alle Adressen in der Listbox zeigen.}
+
+
+

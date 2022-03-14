@@ -1,0 +1,72 @@
+# Help Texts displayed
+#
+# english version
+#
+set helpTopics(context) {Unfortunately, this application doesn't support context-sensitive help in the usual way. But you can achieve much the same effect by simply moving the mouse over the window you're curious about and pressing the Help or F1 keys.  You can do this anytime.}
+set helpTopics(help) {This application provides only very crude help.  Besides the entries in this menu, you can get help on individual windows by moving the mouse cursor over the window and pressing the Help or F1 keys.}
+set helpTopics(window) {This is a addressbook application.}
+set helpTopics(keys) "The following accelerator keys are defined for this application (in addition to those already available for the entry windows):\nCtrl+C:\t\t$mes(clear)\nCtrl+A:\t\t$mes(add)\nCtrl+U:\t\t$mes(update)\nCtrl+S:\t\t$mes(search)\nCtrl+G\t\t$mes(view)\nCtrl+X:\t\t$mes(exit)\nCtrl+P\t\t$mes(print)\nPage up\t\tPrevious address\nPage down\tNext address\nEnter\t\tNext line"
+set helpTopics(.f.menu) {Nothing to do here.}
+set helpTopics(.f.menu.space) {Nothing to do here.}
+set helpTopics(.f.menu.file) {This is the "file" menu.  It can be used to invoke some overall operations on the addressbook application, such as loading a file or exiting.}
+set helpTopics(.f.menu.edit) {This is the "edit" menu. You can clear the field, add, change records, perform search}
+set helpTopics(.f.menu.goto) {This is the "goto" menu. You can perform the same actions as with the Buttons under the listbox.}
+set helpTopics(.f.menu.options) {This is the "options" menu.  It can be used to change some options like searchoptions, global and filespecific options}
+set helpTopics(.f.menu.countries) {This is the "countries" menu.  here you can search for countrycodes}
+set helpTopics(.f.menu.help) {This is the "help" menu. What else.}
+set helpTopics(.f.main.entry.0.entry) \
+"In these fields of the addressbook entry you should type the corresponding \
+data.\nHere are some examples on how to enter it:\n\n\
+addon\t\tsomething like c/o which doesn't belong to street\n\
+street\t\tjust as usual in the country: first streetname and number or\n\
+\t\tfirst number, then streetname (like in France)\n\
+country\tPlease use country abbrevations as on international number\n\
+\t\tplates. By clicking on the button Countries you get a list.\n\
+\t\tFull names will be expandes automatically.\n\
+zip\t\tZip Code, including state (for USA) or letters (for NL)\n\
+state\t\tfor US users. Then you won't put the state in the zip\n\
+city\t\tCityname without zipcode\n\
+birthday\tfeel free, but consequent. I use dd.mm.yyyy maybe\n\
+\t\tsometime a 'birthday reminder app' will be added\n\
+phone*\t\tIMPORTANT: put it, as if you were already in the country\n\
+\t\tinternational dial prefixes are added automatically, if\n\
+\t\tyour configuration in addressbook.config is correct.\n\
+\t\t1-234-567-7890\t(USA & Canada)\n\
+\t\t(089)1234567\t(Germany and many others)\n\
+\t\t12345678\t(Danmark and France exept Paris)\n\
+\t\t(1)44556677\t(France around Paris)\n\
+email\t\tfull emailaddress\n\
+www\t\tURL of homepage (including http://)"
+set helpTopics(.f) {Nothing to do here.}
+set helpTopics(.f.main) {Nothing to do here.}
+set helpTopics(.f.main.entry) {Nothing to do here.}
+set helpTopics(.f.main.list) {Nothing to do here.}
+set helpTopics(.f.main.list.title) {Press here and you will see :-)}
+set helpTopics(.f.main.list.lb.box) {Listbox which shows the name of the people. Press Button to see corresponding address.}
+set helpTopics(.f.main.list.lb.scroll) {Scrollbar to move within listbox.}
+set helpTopics(.f.main.list.status.0) {Show some status information}
+set helpTopics(.f.main.list.status.1) {Show some status information}
+set helpTopics(.f.main.list.status.2) {Show some status information}
+set helpTopics(.f.main.list.status.3.0) {Move within the listbox (move to the beginning)}
+set helpTopics(.f.main.list.status.3.1) {Move within the listbox (move ten back)}
+set helpTopics(.f.main.list.status.3.2) {Move within the listbox (move one back)}
+set helpTopics(.f.main.list.status.3.3) {Move within the listbox (move one forward)}
+set helpTopics(.f.main.list.status.3.4) {Move within the listbox (move ten forward)}
+set helpTopics(.f.main.list.status.3.5) {Move within the listbox (move to the end)}
+set helpTopics(.f.main.list.status.4.b) {Move fast within the listbox (clear the field to enter data)}
+set helpTopics(.f.main.list.status.4.e) {Move fast within the listbox (type some letters and you will see)}
+set helpTopics(.f.main.abc) {Nothing to do here.}
+set helpTopics(.f.main.abc.0) {Move fast within the listbox to the pressed letter. Letters which are pressed fast are appended, if you wait a moment, you reset the first letter.}
+set helpTopics(.f.main.abc.space) {Nothing to do here.}
+set helpTopics(.f.main.abc.mail) {Gives the full address (depending on Option stdout_only either on stdout or to a program)}
+set helpTopics(.f.main.abc.phonepriv) {Gives the privat phonenumber (depending on Option stdout_only either on stdout or to a program which dials directly)}
+set helpTopics(.f.main.abc.phonework) {Gives the work phonenumber (depending on Option stdout_only either on stdout or to a program which dials directly)}
+set helpTopics(.f.main.abc.phone) {Gives the phonenumber (depending on Option stdout_only either on stdout or to a program which dials directly)}
+set helpTopics(.f.main.abc.fax) {Gives the faxnumber (depending on Option stdout_only either on stdout or to a program which faxes directly)}
+set helpTopics(.f.main.abc.email) {Gives the emailaddress (depending on Option stdout_only either on stdout or to a program which sends email)}
+set helpTopics(.f.buttons) {Nothing to do here.}
+set helpTopics(.f.buttons.clear) {Clear the entry field.}
+set helpTopics(.f.buttons.add) {Add a record.}
+set helpTopics(.f.buttons.change) {Change an existing record.}
+set helpTopics(.f.buttons.search) {Perform search action.}
+set helpTopics(.f.buttons.auswahl) {Show all addresses in listbox.}
